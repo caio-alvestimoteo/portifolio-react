@@ -1,0 +1,247 @@
+@use '../../styles/variables' as *;
+
+.timeline {
+  position: relative;
+  margin-top: calc(28px * $ui-scale);
+  border: $border;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(244, 244, 244, 0.96));
+  box-shadow: $shadow;
+  overflow: clip;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(16px * $ui-scale);
+  padding: calc(16px * $ui-scale) calc(18px * $ui-scale);
+  background: $ink;
+  color: #fff;
+  border-bottom: $border;
+
+  h2 {
+    margin: 0;
+    font-family: $font-display;
+    font-size: clamp(calc(1.35rem * $ui-scale), 3.4vw, calc(2.3rem * $ui-scale));
+    text-transform: uppercase;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+  }
+
+  span {
+    font-size: clamp(calc(11px * $ui-scale), 0.8vw, calc(13px * $ui-scale));
+    color: $cyan;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    text-align: right;
+  }
+}
+
+.body {
+  padding: calc(clamp(18px, 3vw, 28px) * $ui-scale);
+  padding-left: calc(34px * $ui-scale);
+}
+
+.timelineTitle {
+  margin: 0 0 calc(18px * $ui-scale) 0;
+  font-family: $font-display;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  font-size: clamp(calc(2rem * $ui-scale), 5vw, calc(4rem * $ui-scale));
+  line-height: 0.9;
+}
+
+.entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: calc(160px * $ui-scale) minmax(0, 1fr);
+  gap: calc(20px * $ui-scale);
+  margin-bottom: calc(26px * $ui-scale);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -3px;
+    top: 22px;
+    width: calc(24px * $ui-scale);
+    height: calc(24px * $ui-scale);
+    border: calc(4px * $ui-scale) solid $ink;
+    background: $cyan;
+    box-shadow: 0 0 0 calc(6px * $ui-scale) $bg, 0 0 0 calc(10px * $ui-scale) $red;
+    z-index: 3;
+  }
+}
+
+.rail {
+  position: relative;
+  padding-top: calc(12px * $ui-scale);
+  z-index: 2;
+}
+
+.year {
+  font-family: $font-display;
+  font-size: clamp(calc(2.8rem * $ui-scale), 7vw, calc(5.4rem * $ui-scale));
+  line-height: 0.82;
+  letter-spacing: -0.01em;
+  color: rgba(13, 13, 13, 0.18);
+  user-select: none;
+}
+
+.meta {
+  margin-top: calc(12px * $ui-scale);
+  display: grid;
+  gap: calc(8px * $ui-scale);
+  font-size: clamp(calc(11px * $ui-scale), 0.8vw, calc(13px * $ui-scale));
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.card {
+  position: relative;
+  border: 4px solid $ink;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(246, 246, 246, 0.98)),
+    repeating-linear-gradient(180deg, transparent 0 27px, rgba(13, 13, 13, 0.03) 27px 28px);
+  box-shadow: calc(10px * $ui-scale) calc(10px * $ui-scale) 0 $ink;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding: calc(22px * $ui-scale);
+}
+
+.entryHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: calc(14px * $ui-scale);
+  align-items: flex-start;
+  margin-bottom: calc(14px * $ui-scale);
+}
+
+.title {
+  margin: 0;
+  font-family: $font-display;
+  font-size: clamp(calc(1.8rem * $ui-scale), 4.6vw, calc(3rem * $ui-scale));
+  max-width: 15ch;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+
+.date {
+  border: calc(3px * $ui-scale) solid $ink;
+  background: $ink;
+  color: #fff;
+  padding: calc(8px * $ui-scale) calc(10px * $ui-scale);
+  font-size: clamp(calc(10px * $ui-scale), 0.8vw, calc(12px * $ui-scale));
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: calc(6px * $ui-scale) calc(6px * $ui-scale) 0 $red;
+  transform: translateY(2px);
+}
+
+.lead {
+  margin: 0 0 calc(16px * $ui-scale);
+  line-height: 1.82;
+  color: #1d1d1d;
+  max-width: 74ch;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr calc(320px * $ui-scale);
+  gap: calc(16px * $ui-scale);
+  align-items: start;
+}
+
+.details {
+  display: grid;
+  gap: calc(12px * $ui-scale);
+}
+
+.miniblock {
+  border: calc(3px * $ui-scale) solid $ink;
+  background: #fafafa;
+  padding: calc(12px * $ui-scale) calc(14px * $ui-scale);
+  box-shadow: calc(6px * $ui-scale) calc(6px * $ui-scale) 0 $ink;
+
+  label {
+    display: block;
+    margin-bottom: calc(8px * $ui-scale);
+    font-size: clamp(calc(10px * $ui-scale), 0.8vw, calc(12px * $ui-scale));
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: $red;
+  }
+
+  p {
+    margin: 0;
+    font-size: clamp(calc(12px * $ui-scale), 0.9vw, calc(14px * $ui-scale));
+    line-height: 1.8;
+    color: #1f1f1f;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: calc(10px * $ui-scale);
+  }
+
+  li {
+    font-size: clamp(calc(12px * $ui-scale), 0.9vw, calc(14px * $ui-scale));
+    line-height: 1.8;
+    color: #1f1f1f;
+  }
+}
+
+.blueprint {
+  position: relative;
+  min-height: 100%;
+  border: calc(3px * $ui-scale) solid $ink;
+  background: linear-gradient(180deg, rgba(0, 217, 230, 0.12), rgba(255, 255, 255, 0.96)),
+    linear-gradient(90deg, transparent 0 24px, rgba(13, 13, 13, 0.08) 24px 25px, transparent 25px 100%),
+    linear-gradient(180deg, transparent 0 24px, rgba(13, 13, 13, 0.08) 24px 25px, transparent 25px 100%),
+    $panel-strong;
+  background-size: auto, calc(26px * $ui-scale) 100%, 100% calc(26px * $ui-scale), auto;
+  box-shadow: calc(8px * $ui-scale) calc(8px * $ui-scale) 0 $ink;
+  overflow: hidden;
+}
+
+.placeholder {
+  position: absolute;
+  inset: calc(18px * $ui-scale);
+  display: grid;
+  place-items: center;
+  border: calc(3px * $ui-scale) dashed rgba(13, 13, 13, 0.55);
+  background: rgba(255, 255, 255, 0.52);
+  text-align: center;
+  padding: calc(20px * $ui-scale);
+  z-index: 1;
+  font-size: clamp(calc(11px * $ui-scale), 0.8vw, calc(13px * $ui-scale));
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: rgba(13, 13, 13, 0.8);
+
+  strong {
+    display: block;
+    font-family: $font-display;
+    font-size: calc(1.8rem * $ui-scale);
+    line-height: 0.9;
+    margin-top: calc(10px * $ui-scale);
+    letter-spacing: -0.01em;
+  }
+}
+
+@media (max-width: 1080px) {
+  .entry {
+    grid-template-columns: 110px minmax(0, 1fr);
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

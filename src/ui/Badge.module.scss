@@ -1,0 +1,10 @@
+@use '../styles/variables' as *;
+
+.badge {
+  width: fit-content;
+  border: 3px solid $ink;
+  background: $panel-strong;
+  padding: calc(7px * $ui-scale) calc(10px * $ui-scale);
+  box-shadow: calc(5px * $ui-scale) calc(5px * $ui-scale) 0 $ink;
+  color: $ink;
+}

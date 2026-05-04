@@ -1,0 +1,17 @@
+$bg: #f0f0f0;
+$panel: #f7f7f7;
+$panel-strong: #ffffff;
+$ink: #0d0d0d;
+$muted: #494949;
+$red: #e30022;
+$cyan: #00d9e6;
+$line: rgba(13, 13, 13, 0.22);
+
+$shadow: 10px 10px 0 $ink;
+$shadow-red: 12px 12px 0 $red;
+$border: 4px solid $ink;
+
+$font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+$font-display: Impact, Haettenschweiler, "Arial Black", "Helvetica Neue", Arial, sans-serif;
+$ui-scale: 1;
+$hero-pad-y: clamp(18px, 4vh, 34px);

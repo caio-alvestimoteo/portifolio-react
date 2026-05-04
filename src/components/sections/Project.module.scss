@@ -1,0 +1,153 @@
+@use '../../styles/variables' as *;
+
+.project {
+  margin-top: calc(28px * $ui-scale);
+  border: $border;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(244, 244, 244, 0.98));
+  box-shadow: $shadow;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(16px * $ui-scale);
+  padding: calc(16px * $ui-scale) calc(18px * $ui-scale);
+  border-bottom: $border;
+  background: $ink;
+  color: #fff;
+
+  h2 {
+    margin: 0;
+    font-family: $font-display;
+    font-size: clamp(calc(1.35rem * $ui-scale), 3.4vw, calc(2.3rem * $ui-scale));
+    text-transform: uppercase;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+  }
+
+  span {
+    font-size: clamp(calc(11px * $ui-scale), 0.8vw, calc(13px * $ui-scale));
+    color: $cyan;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    text-align: right;
+  }
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: calc(18px * $ui-scale);
+  padding: calc(22px * $ui-scale);
+}
+
+.mainPanel,
+.panel {
+  border: 3px solid $ink;
+  background: $panel-strong;
+  box-shadow: calc(8px * $ui-scale) calc(8px * $ui-scale) 0 $ink;
+}
+
+.mainPanel {
+  position: relative;
+  padding: calc(22px * $ui-scale);
+
+  h3 {
+    margin: 0;
+    font-family: $font-display;
+    font-size: clamp(calc(2rem * $ui-scale), 5vw, calc(4rem * $ui-scale));
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    margin: calc(16px * $ui-scale) 0 0;
+    line-height: 1.85;
+    color: #1d1d1d;
+  }
+
+  blockquote {
+    margin: calc(16px * $ui-scale) 0 0;
+    padding: calc(14px * $ui-scale) calc(16px * $ui-scale);
+    border-left: calc(5px * $ui-scale) solid $red;
+    background: rgba(227, 0, 34, 0.07);
+    font-size: clamp(calc(12px * $ui-scale), 0.95vw, calc(15px * $ui-scale));
+    line-height: 1.8;
+    color: #181818;
+  }
+}
+
+.techCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(10px * $ui-scale);
+  margin-top: calc(18px * $ui-scale);
+}
+
+.aside {
+  display: grid;
+  gap: calc(16px * $ui-scale);
+}
+
+.panel {
+  padding: calc(18px * $ui-scale);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: calc(12px * $ui-scale);
+  margin-bottom: calc(14px * $ui-scale);
+
+  strong {
+    font-family: $font-display;
+    text-transform: uppercase;
+    font-size: clamp(calc(1.2rem * $ui-scale), 2.2vw, calc(1.8rem * $ui-scale));
+    line-height: 0.95;
+  }
+
+  span {
+    font-size: clamp(calc(10px * $ui-scale), 0.75vw, calc(12px * $ui-scale));
+    text-transform: uppercase;
+    color: $muted;
+    letter-spacing: -0.01em;
+  }
+}
+
+.panelBody {
+  display: grid;
+  gap: calc(12px * $ui-scale);
+}
+
+.miniBlock {
+  border: 3px solid $ink;
+  background: #fafafa;
+  padding: calc(12px * $ui-scale) calc(14px * $ui-scale);
+  box-shadow: calc(6px * $ui-scale) calc(6px * $ui-scale) 0 $ink;
+
+  label {
+    display: block;
+    margin-bottom: calc(8px * $ui-scale);
+    font-size: clamp(calc(10px * $ui-scale), 0.8vw, calc(12px * $ui-scale));
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: $red;
+  }
+
+  p {
+    margin: 0;
+    font-size: clamp(calc(12px * $ui-scale), 0.9vw, calc(14px * $ui-scale));
+    line-height: 1.8;
+    color: #1f1f1f;
+  }
+}
+
+@media (max-width: 1080px) {
+  .body {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,60 @@
+@use '../../styles/variables' as *;
+
+.scanner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(30px * $ui-scale);
+  height: 100vh;
+  z-index: 20;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: calc(8px * $ui-scale);
+  justify-items: center;
+  align-items: center;
+  background: rgba(13, 13, 13, 0.92);
+  border-right: calc(4px * $ui-scale) solid $ink;
+  box-shadow: calc(4px * $ui-scale) 0 0 rgba(227, 0, 34, 0.85);
+  user-select: none;
+  pointer-events: none;
+  padding: calc(16px * $ui-scale) calc(4px * $ui-scale);
+}
+
+.label,
+.pct {
+  font-size: clamp(calc(10px * $ui-scale), 0.75vw, calc(12px * $ui-scale));
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1;
+}
+
+.label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.track {
+  position: relative;
+  width: calc(12px * $ui-scale);
+  height: 100%;
+  border: calc(2px * $ui-scale) solid rgba(255, 255, 255, 0.2);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent),
+    repeating-linear-gradient(180deg, transparent 0 16px, rgba(255, 255, 255, 0.08) 16px 18px);
+  box-shadow: calc(4px * $ui-scale) calc(4px * $ui-scale) 0 $ink;
+  overflow: hidden;
+}
+
+.fill {
+  position: absolute;
+  inset: auto 0 0;
+  width: 100%;
+  background: linear-gradient(180deg, $cyan, $red);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4) inset;
+}
+
+.pct {
+  color: $cyan;
+  text-align: center;
+}
