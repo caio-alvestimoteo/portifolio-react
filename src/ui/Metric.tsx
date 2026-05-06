@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import type { Metric as MetricType } from '../types';
-import styles from './Metric.module.scss';
 
 interface MetricProps {
   metric: MetricType;
@@ -8,9 +7,9 @@ interface MetricProps {
 
 const Metric: FC<MetricProps> = ({ metric }) => {
   return (
-    <div className={styles.metric}>
-      <span>{metric.label}</span>
-      <strong>{metric.value}</strong>
+    <div className="radar-item">
+      <div className="radar-item__label">{metric.label}</div>
+      <div className="radar-item__value">{metric.value}</div>
     </div>
   );
 };

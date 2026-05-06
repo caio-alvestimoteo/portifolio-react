@@ -1,31 +1,32 @@
 import type { FC } from 'react';
-import Metric from '../../ui/Metric';
-import { skillsData } from '../../data/portfolio';
-import styles from './Skills.module.scss';
+import { skillsData, stackGroups } from '../../data/portfolio';
 
 const Skills: FC = () => {
   return (
-    <section className={styles.skills} id="skills">
-      <div className={styles.header}>
-        <h2>{skillsData.title}</h2>
-        <span>{skillsData.eyebrow}</span>
-      </div>
-
-      <div className={styles.body}>
-        <div className={styles.copy}>
-          <h3>{skillsData.coreTitle}</h3>
-          {skillsData.coreParagraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
+    <section className="skills" id="skills" data-name="STACK">
+      <div className="section-inner">
+        <div className="eyebrow reveal">{skillsData.eyebrow}</div>
+        <h2 className="reveal" style={{ ['--i' as string]: 1 }}>
+          {skillsData.title.toUpperCase()}.
+        </h2>
+        <div className="skills__subtitle reveal" style={{ ['--i' as string]: 2 }}>
+          {skillsData.sub}
         </div>
-
-        <div className={styles.stack}>
-          <h3>{skillsData.educationTitle}</h3>
-          <div className={styles.list}>
-            {skillsData.education.map((metric) => (
-              <Metric key={metric.label} metric={metric} />
-            ))}
-          </div>
+        <div className="skills__grid reveal">
+          {stackGroups.map((group) => (
+            <div key={group.num} className={`skills__group${group.featured ? ' skills__group--featured' : ''}`}>
+              <div className="skills__group-num">{group.num}</div>
+              <div className="skills__group-title">{group.title}</div>
+              <div className="skills__group-sub">▸ {group.sub}</div>
+              <div className="skills__group-tags">
+                {group.tags.map((tag) => (
+                  <span key={tag.label} className={`skills__tag${tag.accent ? ` skills__tag--${tag.accent}` : ''}`}>
+                    {tag.label}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

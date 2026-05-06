@@ -5,11 +5,11 @@ import Project from '../src/components/sections/Project';
 describe('Project', () => {
   it('renders project heading', () => {
     render(<Project />);
-    expect(screen.getByText('Laboratório Prático')).toBeInTheDocument();
+    expect(screen.getByText('04 / LABORATÓRIO PRÁTICO — JAIME // ASSISTENTE LOCAL DE IA')).toBeInTheDocument();
   });
 
   it('renders Jaime title', () => {
     render(<Project />);
-    expect(screen.getByText('Jaime')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'Jaime.' })).toBeInTheDocument();
   });
 });

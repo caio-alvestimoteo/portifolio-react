@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import type { FC } from 'react';
-import styles from './Scanner.module.scss';
 
 const Scanner: FC = () => {
   const [progress, setProgress] = useState(0);
@@ -13,18 +12,15 @@ const Scanner: FC = () => {
       setProgress(scrollPercent);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <aside className={styles.scanner} aria-hidden="true">
-      <div className={styles.label}>Voltage Scan</div>
-      <div className={styles.track}>
-        <div className={styles.fill} style={{ height: `${progress}%` }} />
-      </div>
-      <div className={styles.pct}>{Math.round(progress)}%</div>
-    </aside>
+    <div className="scroll-tracker" aria-hidden="true">
+      <div className="scroll-tracker__fill" style={{ width: `${progress}%` }} />
+      <span className="sr-only">Progress {Math.round(progress)}%</span>
+    </div>
   );
 };
 

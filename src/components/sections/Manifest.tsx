@@ -1,33 +1,35 @@
 import type { FC } from 'react';
 import Metric from '../../ui/Metric';
-import { techStack } from '../../data/portfolio';
-import styles from './Manifest.module.scss';
+import { manifestData, techStack } from '../../data/portfolio';
 
 const Manifest: FC = () => {
   return (
-    <section className={styles.manifest} id="manifest">
-      <div className={styles.copy}>
-        <h3>Momento Atual</h3>
-        <p>
-          Toda a minha trajetória em tecnologia foi construída na prática, ouvindo pessoas e entendendo problemas reais
-          de empresas. Ao longo de mais de 15 anos, transitei entre suporte técnico, desenvolvimento web, e-commerce,
-          arquitetura de APIs e liderança de times. Não vejo a tecnologia como um fim em si, mas como o meio para
-          reduzir tarefas repetitivas, organizar conhecimento e destravar o dia a dia de quem opera.
-        </p>
-        <p>
-          Hoje, levo essa fundação sólida para o universo da Inteligência Artificial aplicada. Em vez de me posicionar
-          como um acadêmico, meu foco é prático: conectar modelos de linguagem a sistemas, APIs e fluxos de trabalho
-          reais. Construo projetos como o assistente Jaime para entender na raiz como ferramentas locais, automações e
-          agentes podem elevar a produtividade técnica com segurança e privacidade.
-        </p>
-      </div>
-
-      <div className={styles.stack}>
-        <h3>Radar técnico</h3>
-        <div className={styles.list}>
-          {techStack.map((metric) => (
-            <Metric key={metric.label} metric={metric} />
-          ))}
+    <section className="manifest dark" id="manifest" data-name="MOMENTO">
+      <div className="section-inner">
+        <div className="eyebrow reveal">{manifestData.eyebrow}</div>
+        <h2 className="reveal" style={{ ['--i' as string]: 1 }}>
+          {manifestData.title}
+          <br />
+          <em>{manifestData.accent}</em>
+        </h2>
+        <div className="manifest__grid">
+          <div>
+            {manifestData.paragraphs.map((paragraph, index) => (
+              <p key={paragraph} className="reveal" style={{ ['--i' as string]: index }}>
+                {paragraph}
+              </p>
+            ))}
+          </div>
+          <div className="manifest__radar reveal reveal--from-right" style={{ ['--i' as string]: 2 }}>
+            <h4 className="manifest__radar-title">RADAR TÉCNICO</h4>
+            <div>
+              {techStack.map((metric, index) => (
+                <div key={metric.label} className="reveal reveal--from-right" style={{ ['--i' as string]: index }}>
+                  <Metric metric={metric} />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

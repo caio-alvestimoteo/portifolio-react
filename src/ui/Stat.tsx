@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import type { Stat as StatType } from '../types';
-import styles from './Stat.module.scss';
 
 interface StatProps {
   stat: StatType;
@@ -8,10 +7,9 @@ interface StatProps {
 
 const Stat: FC<StatProps> = ({ stat }) => {
   return (
-    <div className={styles.stat}>
-      <b>{stat.value}</b>
-      <span>{stat.label}</span>
-      <p dangerouslySetInnerHTML={{ __html: stat.description }} />
+    <div className="hero-stat">
+      <div className="hero-stat__value">{stat.value}</div>
+      <div className="hero-stat__label">{stat.label.split(' ').slice(0, 4).join(' ')}</div>
     </div>
   );
 };

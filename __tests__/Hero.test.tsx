@@ -13,8 +13,8 @@ describe('Hero', () => {
     expect(screen.getByText('TIMOTEO')).toBeInTheDocument();
   });
 
-  it('renders portfolio label', () => {
+  it('renders sector label', () => {
     render(<Hero />);
-    expect(screen.getByText('Portfolio Executivo')).toBeInTheDocument();
+    expect(screen.getAllByText('SECTOR.03A-77')[0]).toBeInTheDocument();
   });
 });

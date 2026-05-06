@@ -3,13 +3,13 @@ import { render, screen } from '@testing-library/react';
 import Scanner from '../src/components/layout/Scanner';
 
 describe('Scanner', () => {
-  it('renders scanner label', () => {
+  it('renders progressbar output for screen readers', () => {
     render(<Scanner />);
-    expect(screen.getByText('Voltage Scan')).toBeInTheDocument();
+    expect(screen.getByText('Progress 0%')).toBeInTheDocument();
   });
 
-  it('renders initial progress as 0%', () => {
+  it('renders initial progress state', () => {
     render(<Scanner />);
-    expect(screen.getByText('0%')).toBeInTheDocument();
+    expect(screen.getByText('Progress 0%')).toBeInTheDocument();
   });
 });

@@ -1,83 +1,57 @@
-import { useEffect, useRef } from 'react';
 import type { FC } from 'react';
 import Chip from '../../ui/Chip';
 import Stat from '../../ui/Stat';
-import type { Stat as StatType } from '../../types';
-import { stats, chips } from '../../data/portfolio';
-import styles from './Hero.module.scss';
+import { chips, stats } from '../../data/portfolio';
 
 const Hero: FC = () => {
-  const parallaxRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!parallaxRef.current) return;
-
-      const scrolled = window.scrollY;
-      parallaxRef.current.querySelectorAll('[data-parallax]').forEach((el) => {
-        const factor = parseFloat((el as HTMLElement).dataset.parallax || '0');
-        (el as HTMLElement).style.transform = `translate3d(0, ${-scrolled * factor}px, 0)`;
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <header className={styles.hero} ref={parallaxRef}>
-      <div className={styles.floating1} data-parallax="0.05">
-        ネオ東京 / 03A-77
-      </div>
-      <div className={styles.floating2} data-parallax="0.08">
-        KATANA SYS / 88-14
-      </div>
-      <div className={styles.floating3} data-parallax="0.04">
-        CAUTION: LAYERED MEMORY
-      </div>
-
-      <section className={styles.left}>
-        <div className={styles.topline}>
-          <div className={styles.label}>Portfolio Executivo</div>
-          <div className={styles.support} data-parallax="0.02">
-            <span>Momento Atual</span>
-            <strong>Dev Sênior direcionando foco para IA Aplicada</strong>
-            <small>front-end / e-commerce / integrações / IA local e automações</small>
+    <section className="hero" id="hero" data-name="HERO">
+      <div className="section-inner">
+        <div className="hero__topline reveal">
+          <strong>SECTOR.03A-77</strong>
+          <span>DEV SR / IA APLICADA — AUTOMAÇÕES</span>
+        </div>
+        <div className="hero__layout">
+          <div>
+            <h1 className="hero__title reveal">
+              CAIO<span className="hero__title-accent">TIMOTEO</span>
+            </h1>
+            <div className="hero__role reveal" style={{ ['--i' as string]: 1 }}>
+              ▸ <strong>DESENVOLVEDOR SÊNIOR</strong> / IA APLICADA — AUTOMAÇÕES — INTEGRAÇÕES
+            </div>
+            <p className="hero__lead reveal" style={{ ['--i' as string]: 2 }}>
+              15+ anos transformando problemas em soluções reais. Bagagem em suporte, front-end, e-commerce, integrações e
+              liderança técnica direcionada para <strong>IA Aplicada</strong>, automações e soluções digitais com
+              privacidade e código real.
+            </p>
+            <div className="hero__chips reveal" style={{ ['--i' as string]: 3 }}>
+              {chips.map((chip) => (
+                <Chip key={chip.name}>{chip.name}</Chip>
+              ))}
+            </div>
+          </div>
+          <div className="hero__card reveal reveal--from-right" style={{ ['--i' as string]: 2 }}>
+            <div className="hero__card-label">SECTOR.03A-77</div>
+            <div className="hero__card-jp">
+              進化
+              <br />
+              武士道
+            </div>
+            <div className="hero__card-jp-sub">EVOLUTION / AI / BUSHIDO</div>
+            <div className="hero__card-stats">
+              {stats.map((stat, index) => (
+                <div key={stat.id} className="reveal reveal--from-bottom" style={{ ['--i' as string]: index }}>
+                  <Stat stat={stat} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-
-        <div className={styles.mark} data-parallax="0.025" aria-hidden="true">
-          Neo
-          <br />
-          Tokyo
+        <div className="hero__scroll-hint reveal" style={{ ['--i' as string]: 4 }}>
+          SCROLL <span className="hero__scroll-line" /> ROLE PARA BAIXO
         </div>
-
-        <div>
-          <h1>
-            CAIO
-            <br />
-            <span>TIMOTEO</span>
-          </h1>
-          <p className={styles.intro}>
-            Desenvolvedor sênior há mais de 15 anos transformando problemas em soluções reais. No momento atual,
-            direcionando minha bagagem em suporte, front-end, e-commerce, integrações e liderança técnica para{' '}
-            <strong>IA Aplicada</strong>, automações e soluções digitais. O Jaime é meu projeto prático para estudar essa
-            transição com profundidade, privacidade e código real. <strong><a href="#manifest">Considere Saber Mais - Clique Aqui</a></strong>
-          </p>
-          <div className={styles.chips}>
-            {chips.map((chip) => (
-              <Chip key={chip.name}>{chip.name}</Chip>
-            ))}
-          </div>
-        </div>
-
-        <div className={styles.stats}>
-          {stats.map((stat: StatType) => (
-            <Stat key={stat.id} stat={stat} />
-          ))}
-        </div>
-      </section>
-    </header>
+      </div>
+    </section>
   );
 };
 

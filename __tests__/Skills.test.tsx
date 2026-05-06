@@ -5,11 +5,11 @@ import Skills from '../src/components/sections/Skills';
 describe('Skills', () => {
   it('renders skills heading', () => {
     render(<Skills />);
-    expect(screen.getByText('Competências, formação e idiomas')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'COMPETÊNCIAS.' })).toBeInTheDocument();
   });
 
-  it('renders education heading', () => {
+  it('renders stack subtitle', () => {
     render(<Skills />);
-    expect(screen.getByText('Formação e idiomas')).toBeInTheDocument();
+    expect(screen.getByText('Stack core, formação e idiomas')).toBeInTheDocument();
   });
 });

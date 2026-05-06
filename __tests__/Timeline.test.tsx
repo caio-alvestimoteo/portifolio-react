@@ -5,7 +5,7 @@ import Timeline from '../src/components/sections/Timeline';
 describe('Timeline', () => {
   it('renders timeline section', () => {
     render(<Timeline />);
-    expect(screen.getByText('A jornada até a IA Aplicada')).toBeInTheDocument();
+    expect(screen.getByText('A JORNADA ATÉ A IA APLICADA.')).toBeInTheDocument();
   });
 
   it('renders first entry title', () => {
