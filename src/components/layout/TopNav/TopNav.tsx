@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { FC } from 'react';
-import { navSections } from '../../data/portfolio';
+import { navSections } from '../../../data/portfolio';
+import { Nav, Brand, Controls, Dot } from './TopNav.styles';
 
 const TopNav: FC = () => {
   const [activeSection, setActiveSection] = useState(navSections[0]?.id ?? '');
@@ -29,23 +30,23 @@ const TopNav: FC = () => {
   }, []);
 
   return (
-    <div className="top-nav">
-      <div className="top-nav__brand">
+    <Nav>
+      <Brand>
         <strong>CAIO TIMOTEO</strong>
         <span>// PORTFOLIO 2026 / FILE-77.A1</span>
-      </div>
-      <div className="top-nav__controls">
+      </Brand>
+      <Controls>
         {navSections.map((section) => (
-          <button
+          <Dot
             key={section.id}
-            className={`top-nav__dot${activeSection === section.id ? ' top-nav__dot--active' : ''}`}
+            $active={activeSection === section.id}
             title={section.name}
             type="button"
             onClick={() => document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' })}
           />
         ))}
-      </div>
-    </div>
+      </Controls>
+    </Nav>
   );
 };
 

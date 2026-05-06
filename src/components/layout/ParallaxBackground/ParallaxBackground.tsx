@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import type { FC } from 'react';
-import { parallaxLayers } from '../../data/portfolio';
+import { parallaxLayers } from '../../../data/portfolio';
+import { BgWrap, Layer } from './ParallaxBackground.styles';
 
 const ParallaxBackground: FC = () => {
   const layersRef = useRef<Array<HTMLDivElement | null>>([]);
@@ -26,27 +27,26 @@ const ParallaxBackground: FC = () => {
   }, []);
 
   return (
-    <div className="parallax-bg" aria-hidden="true">
+    <BgWrap aria-hidden="true">
       {parallaxLayers.map((layer, index) => (
-        <div
+        <Layer
           key={`${layer.text}-${index}`}
           ref={(element) => {
             layersRef.current[index] = element;
           }}
-          className="parallax-bg__layer"
           style={{
             top: layer.top,
             [layer.side]: layer.offset,
             fontSize: layer.fontSize,
             color: layer.color,
             fontFamily: layer.japanese ? '"Noto Sans JP", sans-serif' : undefined,
-            fontWeight: layer.japanese ? 900 : undefined
+            fontWeight: layer.japanese ? 900 : undefined,
           }}
         >
           {layer.text}
-        </div>
+        </Layer>
       ))}
-    </div>
+    </BgWrap>
   );
 };
 

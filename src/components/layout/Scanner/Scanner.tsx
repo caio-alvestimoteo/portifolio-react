@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { FC } from 'react';
+import { Tracker, Fill } from './Scanner.styles';
 
 const Scanner: FC = () => {
   const [progress, setProgress] = useState(0);
@@ -17,10 +18,10 @@ const Scanner: FC = () => {
   }, []);
 
   return (
-    <div className="scroll-tracker" aria-hidden="true">
-      <div className="scroll-tracker__fill" style={{ width: `${progress}%` }} />
+    <Tracker aria-hidden="true">
+      <Fill style={{ width: `${progress}%` }} />
       <span className="sr-only">Progress {Math.round(progress)}%</span>
-    </div>
+    </Tracker>
   );
 };
 

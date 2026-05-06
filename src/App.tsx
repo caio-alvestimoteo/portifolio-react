@@ -1,16 +1,16 @@
 import { useEffect } from 'react';
 import type { FC } from 'react';
-import Hero from './components/sections/Hero';
-import Manifest from './components/sections/Manifest';
-import Project from './components/sections/Project';
-import Timeline from './components/sections/Timeline';
-import Skills from './components/sections/Skills';
-import Footer from './components/sections/Footer';
-import Scanner from './components/layout/Scanner';
-import TopNav from './components/layout/TopNav';
-import SocialDock from './components/layout/SocialDock';
-import ParallaxBackground from './components/layout/ParallaxBackground';
-import './styles/globals.scss';
+import Hero from './components/sections/Hero/Hero';
+import Manifest from './components/sections/Manifest/Manifest';
+import Project from './components/sections/Project/Project';
+import Timeline from './components/sections/Timeline/Timeline';
+import Skills from './components/sections/Skills/Skills';
+import Footer from './components/sections/Footer/Footer';
+import Scanner from './components/layout/Scanner/Scanner';
+import TopNav from './components/layout/TopNav/TopNav';
+import SocialDock from './components/layout/SocialDock/SocialDock';
+import ParallaxBackground from './components/layout/ParallaxBackground/ParallaxBackground';
+import { GlobalStyle } from './components/shared.styles';
 
 const App: FC = () => {
   useEffect(() => {
@@ -34,6 +34,7 @@ const App: FC = () => {
 
   return (
     <>
+      <GlobalStyle />
       <Scanner />
       <TopNav />
       <SocialDock />
