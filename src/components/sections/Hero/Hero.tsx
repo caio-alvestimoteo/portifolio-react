@@ -27,8 +27,9 @@ const Hero: FC = () => {
             </Role>
             <Lead className="reveal" style={{ ['--i' as string]: 2 }}>
               15+ anos transformando problemas em soluções reais. Bagagem em suporte, front-end, e-commerce, integrações e
-              liderança técnica direcionada para <strong>IA Aplicada</strong>, automações e soluções digitais com
-              privacidade e código real.
+              liderança técnica. Hoje estou direcionando essa experiência para  <strong>IA Aplicada</strong>, automações e agentes.
+
+              Meu foco é construir ferramentas que ajudem pessoas e times a ganhar produtividade, organizar conhecimento, reduzir tarefas repetitivas e transformar processos em soluções mais inteligentes.
             </Lead>
             <Chips className="reveal" style={{ ['--i' as string]: 3 }}>
               {chips.map((chip) => (
