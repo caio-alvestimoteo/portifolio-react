@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { tokens } from '../../../tokens';
 
-export const Tracker = styled.div`
+export const Tracker = styled.div.withConfig({ componentId: 'scanner__tracker' })`
   position: fixed;
   top: 0;
   left: 0;
@@ -10,7 +10,7 @@ export const Tracker = styled.div`
   width: 100%;
 `;
 
-export const Fill = styled.div`
+export const Fill = styled.div.withConfig({ componentId: 'scanner__fill' })`
   height: 100%;
   background: ${tokens.red};
   transition: width 0.05s linear;

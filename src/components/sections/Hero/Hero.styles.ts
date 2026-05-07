@@ -7,7 +7,7 @@ const slide = keyframes`
   100% { left: 56px; }
 `;
 
-export const HeroSection = styled.section`
+export const HeroSection = styled.section.withConfig({ componentId: 'hero-section' })`
   ${sectionBase}
   min-height: 100vh;
   display: flex;
@@ -16,7 +16,7 @@ export const HeroSection = styled.section`
   padding: 120px 8vw 80px;
 `;
 
-export const Topline = styled.div`
+export const Topline = styled.div.withConfig({ componentId: 'hero__topline' })`
   position: absolute;
   top: 80px;
   left: 8vw;
@@ -31,7 +31,7 @@ export const Topline = styled.div`
   text-transform: uppercase;
 `;
 
-export const Layout = styled.div`
+export const Layout = styled.div.withConfig({ componentId: 'hero__layout' })`
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 48px;
@@ -42,7 +42,7 @@ export const Layout = styled.div`
   }
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h1.withConfig({ componentId: 'hero__title' })`
   font-family: ${tokens.fontDisplay};
   font-size: clamp(96px, 13vw, 220px);
   line-height: 0.84;
@@ -59,13 +59,13 @@ export const Title = styled.h1`
   @media (max-width: 650px) { font-size: clamp(58.4px, 11.7vw, 198px); }
 `;
 
-export const TitleAccent = styled.span`
+export const TitleAccent = styled.span.withConfig({ componentId: 'hero__title-accent' })`
   display: block;
   color: ${tokens.red};
   transition: color 0.3s;
 `;
 
-export const Role = styled.div`
+export const Role = styled.div.withConfig({ componentId: 'hero__role' })`
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -75,7 +75,7 @@ export const Role = styled.div`
   strong { color: ${tokens.ink}; }
 `;
 
-export const Lead = styled.p`
+export const Lead = styled.p.withConfig({ componentId: 'hero__lead' })`
   font-size: 16px;
   line-height: 1.7;
   max-width: 560px;
@@ -85,13 +85,13 @@ export const Lead = styled.p`
   strong { color: ${tokens.red}; }
 `;
 
-export const Chips = styled.div`
+export const Chips = styled.div.withConfig({ componentId: 'hero__chips' })`
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 `;
 
-export const Card = styled.div`
+export const Card = styled.div.withConfig({ componentId: 'hero__card' })`
   border: 2px solid ${tokens.ink};
   background: ${tokens.bg2};
   padding: 20px;
@@ -104,7 +104,7 @@ export const Card = styled.div`
   }
 `;
 
-export const CardLabel = styled.div`
+export const CardLabel = styled.div.withConfig({ componentId: 'hero__card-label' })`
   position: absolute;
   top: -2px;
   left: -2px;
@@ -115,7 +115,7 @@ export const CardLabel = styled.div`
   letter-spacing: 0.18em;
 `;
 
-export const CardJp = styled.div`
+export const CardJp = styled.div.withConfig({ componentId: 'hero__card-jp' })`
   font-family: ${tokens.fontJp};
   font-size: clamp(48px, 6vw, 80px);
   font-weight: 900;
@@ -125,7 +125,7 @@ export const CardJp = styled.div`
   text-align: right;
 `;
 
-export const CardJpSub = styled.div`
+export const CardJpSub = styled.div.withConfig({ componentId: 'hero__card-jp-sub' })`
   font-size: 10px;
   color: ${tokens.muted};
   letter-spacing: 0.2em;
@@ -133,7 +133,7 @@ export const CardJpSub = styled.div`
   text-transform: uppercase;
 `;
 
-export const CardStats = styled.div`
+export const CardStats = styled.div.withConfig({ componentId: 'hero__card-stats' })`
   margin-top: 28px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -142,7 +142,7 @@ export const CardStats = styled.div`
   padding-top: 14px;
 `;
 
-export const ScrollHint = styled.div`
+export const ScrollHint = styled.div.withConfig({ componentId: 'hero__scroll-hint' })`
   position: absolute;
   bottom: 32px;
   left: 8vw;
@@ -155,7 +155,7 @@ export const ScrollHint = styled.div`
   color: ${tokens.muted};
 `;
 
-export const ScrollLine = styled.span`
+export const ScrollLine = styled.span.withConfig({ componentId: 'hero__scroll-line' })`
   display: inline-block;
   width: 56px;
   height: 2px;

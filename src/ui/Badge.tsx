@@ -2,7 +2,7 @@ import type { FC, ReactNode } from 'react';
 import styled from 'styled-components';
 import { tokens } from '../tokens';
 
-const BadgeEl = styled.div`
+const BadgeEl = styled.div.withConfig({ componentId: 'badge' })`
   width: fit-content;
   border: 3px solid ${tokens.ink};
   background: #ffffff;

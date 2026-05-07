@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { tokens } from '../../../tokens';
 import { sectionBase, h2Base } from '../../shared.styles';
 
-export const TimelineSection = styled.section`
+export const TimelineSection = styled.section.withConfig({ componentId: 'timeline-section' })`
   ${sectionBase}
 
   h2 {
@@ -11,7 +11,7 @@ export const TimelineSection = styled.section`
   }
 `;
 
-export const Subtitle = styled.div`
+export const Subtitle = styled.div.withConfig({ componentId: 'timeline__subtitle' })`
   font-size: 11px;
   letter-spacing: 0.18em;
   color: ${tokens.muted};
@@ -19,13 +19,13 @@ export const Subtitle = styled.div`
   margin-bottom: 40px;
 `;
 
-export const Track = styled.div`
+export const Track = styled.div.withConfig({ componentId: 'timeline__track' })`
   position: relative;
   border-left: 2px solid ${tokens.ink};
   padding-left: 0;
 `;
 
-export const Entry = styled.article`
+export const Entry = styled.article.withConfig({ componentId: 'timeline__entry' })`
   display: grid;
   grid-template-columns: 200px 1fr;
   gap: 40px;
@@ -78,13 +78,13 @@ export const Entry = styled.article`
   }
 `;
 
-export const EntryMeta = styled.div`
+export const EntryMeta = styled.div.withConfig({ componentId: 'timeline__entry-meta' })`
   display: flex;
   flex-direction: column;
   gap: 6px;
 `;
 
-export const EntryYear = styled.div`
+export const EntryYear = styled.div.withConfig({ componentId: 'timeline__entry-year' })`
   font-family: ${tokens.fontDisplay};
   font-size: 56px;
   line-height: 1;
@@ -100,13 +100,13 @@ export const EntryYear = styled.div`
   @media (max-width: 900px) { font-size: 40px; }
 `;
 
-export const EntryCode = styled.div`
+export const EntryCode = styled.div.withConfig({ componentId: 'timeline__entry-code' })`
   font-size: 10px;
   letter-spacing: 0.2em;
   color: ${tokens.muted};
 `;
 
-export const EntryBadge = styled.div`
+export const EntryBadge = styled.div.withConfig({ componentId: 'timeline__entry-badge' })`
   display: inline-block;
   background: ${tokens.ink};
   color: ${tokens.bg};
@@ -120,11 +120,11 @@ export const EntryBadge = styled.div`
   ${Entry}:hover & { background: ${tokens.red}; }
 `;
 
-export const EntryBody = styled.div`
+export const EntryBody = styled.div.withConfig({ componentId: 'timeline__entry-body' })`
   padding: 8px 0;
 `;
 
-export const EntryCompany = styled.div`
+export const EntryCompany = styled.div.withConfig({ componentId: 'timeline__entry-company' })`
   font-size: 11px;
   letter-spacing: 0.14em;
   color: ${tokens.muted};
@@ -132,7 +132,7 @@ export const EntryCompany = styled.div`
   margin-bottom: 12px;
 `;
 
-export const EntryPeriod = styled.div`
+export const EntryPeriod = styled.div.withConfig({ componentId: 'timeline__entry-period' })`
   font-size: 10px;
   color: ${tokens.cyan};
   letter-spacing: 0.14em;

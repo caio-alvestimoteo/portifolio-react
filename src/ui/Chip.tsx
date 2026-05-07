@@ -2,7 +2,7 @@ import type { FC, ReactNode } from 'react';
 import styled from 'styled-components';
 import { tokens } from '../tokens';
 
-const ChipEl = styled.span`
+const ChipEl = styled.span.withConfig({ componentId: 'chip' })`
   transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
   cursor: default;
   position: relative;

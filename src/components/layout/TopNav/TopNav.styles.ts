@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { tokens } from '../../../tokens';
 
-export const Nav = styled.div`
+export const Nav = styled.div.withConfig({ componentId: 'top-nav' })`
   position: fixed;
   top: 14px;
   left: 24px;
@@ -18,7 +18,7 @@ export const Nav = styled.div`
   color: #fff;
 `;
 
-export const Brand = styled.div`
+export const Brand = styled.div.withConfig({ componentId: 'top-nav__brand' })`
   display: flex;
   gap: 16px;
   align-items: center;
@@ -29,7 +29,7 @@ export const Brand = styled.div`
   }
 `;
 
-export const Controls = styled.div`
+export const Controls = styled.div.withConfig({ componentId: 'top-nav__controls' })`
   display: flex;
   gap: 8px;
   pointer-events: auto;
@@ -37,7 +37,7 @@ export const Controls = styled.div`
   color: ${tokens.ink};
 `;
 
-export const Dot = styled.button<{ $active: boolean }>`
+export const Dot = styled.button.withConfig({ componentId: 'top-nav__dot' })<{ $active: boolean }>`
   width: 36px;
   height: 14px;
   border: 2px solid ${({ $active }) => ($active ? tokens.red : tokens.ink)};

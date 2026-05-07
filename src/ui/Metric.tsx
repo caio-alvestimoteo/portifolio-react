@@ -3,7 +3,7 @@ import type { Metric as MetricType } from '../types';
 import styled from 'styled-components';
 import { tokens } from '../tokens';
 
-const RadarItem = styled.div`
+const RadarItem = styled.div.withConfig({ componentId: 'metric' })`
   border: 1px solid rgba(239, 234, 224, 0.2);
   padding: 14px 16px;
   background: rgba(255, 255, 255, 0.04);
@@ -31,7 +31,7 @@ const RadarItem = styled.div`
   &:hover::before { width: 4px; }
 `;
 
-const RadarLabel = styled.div`
+const RadarLabel = styled.div.withConfig({ componentId: 'metric__label' })`
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -39,7 +39,7 @@ const RadarLabel = styled.div`
   margin-bottom: 4px;
 `;
 
-const RadarValue = styled.div`
+const RadarValue = styled.div.withConfig({ componentId: 'metric__value' })`
   font-size: 13px;
   color: ${tokens.bg};
 `;

@@ -105,17 +105,17 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export const SectionInner = styled.div`
+export const SectionInner = styled.div.withConfig({ componentId: 'shared-section-inner' })`
   width: 100%;
   max-width: 1750px;
   margin-inline: auto;
 `;
 
-export const SectionH2 = styled.h2`
+export const SectionH2 = styled.h2.withConfig({ componentId: 'shared-section-h2' })`
   ${h2Base}
 `;
 
-export const Eyebrow = styled.div<{ $dark?: boolean }>`
+export const Eyebrow = styled.div.withConfig({ componentId: 'shared-eyebrow' })<{ $dark?: boolean }>`
   font-family: ${tokens.fontMono};
   font-size: 11px;
   letter-spacing: 0.22em;
@@ -123,8 +123,9 @@ export const Eyebrow = styled.div<{ $dark?: boolean }>`
   color: ${({ $dark }) => ($dark ? tokens.cyan : tokens.red)};
   margin-bottom: 14px;
   font-weight: 700;
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  width: fit-content;
   gap: 8px;
   cursor: default;
 

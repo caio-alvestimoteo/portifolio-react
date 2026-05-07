@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { tokens } from '../../../tokens';
 
-export const Tooltip = styled.span`
+export const Tooltip = styled.span.withConfig({ componentId: 'social-dock__tooltip' })`
   position: absolute;
   right: calc(100% + 10px);
   top: 50%;
@@ -19,7 +19,7 @@ export const Tooltip = styled.span`
   border: 1px solid ${tokens.ink};
 `;
 
-export const Link = styled.a`
+export const Link = styled.a.withConfig({ componentId: 'social-dock__link' })`
   width: 52px;
   height: 52px;
   display: flex;
@@ -61,7 +61,7 @@ export const Link = styled.a`
   }
 `;
 
-export const Dock = styled.nav`
+export const Dock = styled.nav.withConfig({ componentId: 'social-dock' })`
   position: fixed;
   right: 24px;
   bottom: 24px;
@@ -71,7 +71,7 @@ export const Dock = styled.nav`
   gap: 10px;
 `;
 
-export const Logo = styled.span`
+export const Logo = styled.span.withConfig({ componentId: 'social-dock__logo' })`
   font-family: ${tokens.fontDisplay};
   font-size: 26px;
   line-height: 1;

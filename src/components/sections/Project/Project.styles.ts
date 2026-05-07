@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { tokens } from '../../../tokens';
 import { sectionBase } from '../../shared.styles';
 
-export const ProjectSection = styled.section`
+export const ProjectSection = styled.section.withConfig({ componentId: 'project-section' })`
   ${sectionBase}
 
   &::after {
@@ -35,7 +35,7 @@ export const ProjectSection = styled.section`
   }
 `;
 
-export const Layout = styled.div`
+export const Layout = styled.div.withConfig({ componentId: 'project__layout' })`
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   gap: 40px;
@@ -45,7 +45,7 @@ export const Layout = styled.div`
   }
 `;
 
-export const Lead = styled.p`
+export const Lead = styled.p.withConfig({ componentId: 'project__lead' })`
   font-size: 16px;
   line-height: 1.7;
   margin: 0 0 24px;
@@ -53,7 +53,7 @@ export const Lead = styled.p`
   max-width: 600px;
 `;
 
-export const Quote = styled.blockquote`
+export const Quote = styled.blockquote.withConfig({ componentId: 'project__quote' })`
   border: 2px solid ${tokens.ink};
   background: ${tokens.yellow};
   padding: 18px 22px;
@@ -71,13 +71,13 @@ export const Quote = styled.blockquote`
   }
 `;
 
-export const Tags = styled.div`
+export const Tags = styled.div.withConfig({ componentId: 'project__tags' })`
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 `;
 
-export const Panel = styled.div`
+export const Panel = styled.div.withConfig({ componentId: 'project__panel' })`
   border: 2px solid ${tokens.ink};
   padding: 18px;
   margin-bottom: 16px;
@@ -109,7 +109,7 @@ export const Panel = styled.div`
   }
 `;
 
-export const PanelTitle = styled.strong`
+export const PanelTitle = styled.strong.withConfig({ componentId: 'project__panel-title' })`
   font-family: ${tokens.fontDisplay};
   font-size: 18px;
   display: block;
@@ -117,7 +117,7 @@ export const PanelTitle = styled.strong`
   text-transform: uppercase;
 `;
 
-export const PanelEyebrow = styled.div`
+export const PanelEyebrow = styled.div.withConfig({ componentId: 'project__panel-eyebrow' })`
   font-size: 10px;
   letter-spacing: 0.16em;
   color: ${tokens.cyan};

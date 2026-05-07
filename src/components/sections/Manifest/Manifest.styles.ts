@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { tokens } from '../../../tokens';
 import { sectionBase, h2Base } from '../../shared.styles';
 
-export const ManifestSection = styled.section`
+export const ManifestSection = styled.section.withConfig({ componentId: 'manifest-section' })`
   ${sectionBase}
   background: ${tokens.ink};
   color: ${tokens.bg};
@@ -18,7 +18,7 @@ export const ManifestSection = styled.section`
   }
 `;
 
-export const Grid = styled.div`
+export const Grid = styled.div.withConfig({ componentId: 'manifest__grid' })`
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   gap: 56px;
@@ -37,7 +37,7 @@ export const Grid = styled.div`
   }
 `;
 
-export const Radar = styled.div`
+export const Radar = styled.div.withConfig({ componentId: 'manifest__radar' })`
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -45,7 +45,7 @@ export const Radar = styled.div`
   padding-top: 20px;
 `;
 
-export const RadarTitle = styled.h4`
+export const RadarTitle = styled.h4.withConfig({ componentId: 'manifest__radar-title' })`
   font-size: 10px;
   letter-spacing: 0.22em;
   color: ${tokens.cyan};

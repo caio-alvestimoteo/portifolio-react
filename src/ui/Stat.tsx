@@ -3,7 +3,7 @@ import type { Stat as StatType } from '../types';
 import styled from 'styled-components';
 import { tokens } from '../tokens';
 
-const Value = styled.div`
+const Value = styled.div.withConfig({ componentId: 'stat__value' })`
   font-family: ${tokens.fontDisplay};
   font-size: clamp(28px, 3vw, 40px);
   line-height: 1;
@@ -11,7 +11,7 @@ const Value = styled.div`
   transition: color 0.2s;
 `;
 
-const Label = styled.div`
+const Label = styled.div.withConfig({ componentId: 'stat__label' })`
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -20,7 +20,7 @@ const Label = styled.div`
   line-height: 1.3;
 `;
 
-const StatWrap = styled.div`
+const StatWrap = styled.div.withConfig({ componentId: 'stat' })`
   transition: transform 0.2s;
   cursor: default;
 

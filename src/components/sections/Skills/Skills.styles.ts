@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { tokens } from '../../../tokens';
 import { sectionBase, h2Base } from '../../shared.styles';
 
-export const SkillsSection = styled.section`
+export const SkillsSection = styled.section.withConfig({ componentId: 'skills-section' })`
   ${sectionBase}
 
   h2 {
@@ -11,7 +11,7 @@ export const SkillsSection = styled.section`
   }
 `;
 
-export const Subtitle = styled.div`
+export const Subtitle = styled.div.withConfig({ componentId: 'skills__subtitle' })`
   font-size: 11px;
   letter-spacing: 0.2em;
   color: ${tokens.muted};
@@ -19,7 +19,7 @@ export const Subtitle = styled.div`
   margin-bottom: 32px;
 `;
 
-export const Tag = styled.span<{ $accent?: 'red' | 'cyan'; $featured?: boolean }>`
+export const Tag = styled.span.withConfig({ componentId: 'skills__tag' })<{ $accent?: 'red' | 'cyan'; $featured?: boolean }>`
   font-size: 10px;
   padding: 4px 8px;
   border: 1px solid;
@@ -47,7 +47,7 @@ export const Tag = styled.span<{ $accent?: 'red' | 'cyan'; $featured?: boolean }
   }
 `;
 
-export const Group = styled.div<{ $featured?: boolean }>`
+export const Group = styled.div.withConfig({ componentId: 'skills__group' })<{ $featured?: boolean }>`
   padding: 22px 24px;
   border-right: 2px solid ${tokens.ink};
   border-bottom: 2px solid ${tokens.ink};
@@ -61,7 +61,7 @@ export const Group = styled.div<{ $featured?: boolean }>`
   &:hover { background: ${({ $featured }) => ($featured ? '#1a1818' : tokens.bg2)}; }
 `;
 
-export const Grid = styled.div`
+export const Grid = styled.div.withConfig({ componentId: 'skills__grid' })`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
@@ -82,7 +82,7 @@ export const Grid = styled.div`
   }
 `;
 
-export const GroupNum = styled.div<{ $featured?: boolean }>`
+export const GroupNum = styled.div.withConfig({ componentId: 'skills__group-num' })<{ $featured?: boolean }>`
   position: absolute;
   top: 14px;
   right: 16px;
@@ -92,7 +92,7 @@ export const GroupNum = styled.div<{ $featured?: boolean }>`
   letter-spacing: -0.02em;
 `;
 
-export const GroupTitle = styled.div`
+export const GroupTitle = styled.div.withConfig({ componentId: 'skills__group-title' })`
   font-family: ${tokens.fontDisplay};
   font-size: 13px;
   letter-spacing: 0.04em;
@@ -101,7 +101,7 @@ export const GroupTitle = styled.div`
   line-height: 1.1;
 `;
 
-export const GroupSub = styled.div<{ $featured?: boolean }>`
+export const GroupSub = styled.div.withConfig({ componentId: 'skills__group-sub' })<{ $featured?: boolean }>`
   font-size: 9px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -109,7 +109,7 @@ export const GroupSub = styled.div<{ $featured?: boolean }>`
   margin-bottom: 14px;
 `;
 
-export const GroupTags = styled.div`
+export const GroupTags = styled.div.withConfig({ componentId: 'skills__group-tags' })`
   display: flex;
   flex-wrap: wrap;
   gap: 5px;

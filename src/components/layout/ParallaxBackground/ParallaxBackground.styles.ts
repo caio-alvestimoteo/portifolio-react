@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { tokens } from '../../../tokens';
 
-export const BgWrap = styled.div`
+export const BgWrap = styled.div.withConfig({ componentId: 'parallax__wrap' })`
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -9,7 +9,7 @@ export const BgWrap = styled.div`
   overflow: hidden;
 `;
 
-export const Layer = styled.div`
+export const Layer = styled.div.withConfig({ componentId: 'parallax__layer' })`
   position: absolute;
   will-change: transform;
   font-family: ${tokens.fontDisplay};
