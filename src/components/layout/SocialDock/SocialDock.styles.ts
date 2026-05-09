@@ -9,7 +9,7 @@ export const Tooltip = styled.span.withConfig({ componentId: 'social-dock__toolt
   background: ${tokens.ink};
   color: ${tokens.bg};
   padding: 4px 10px;
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -73,11 +73,11 @@ export const Dock = styled.nav.withConfig({ componentId: 'social-dock' })`
 
 export const Logo = styled.span.withConfig({ componentId: 'social-dock__logo' })`
   font-family: ${tokens.fontDisplay};
-  font-size: 26px;
+  font-size: 30px;
   line-height: 1;
   letter-spacing: -0.05em;
 
   @media (max-width: 600px) {
-    font-size: 22px;
+    font-size: 25px;
   }
 `;

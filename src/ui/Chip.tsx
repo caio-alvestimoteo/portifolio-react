@@ -6,7 +6,7 @@ const ChipEl = styled.span.withConfig({ componentId: 'chip' })`
   transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
   cursor: default;
   position: relative;
-  font-size: 10px;
+  font-size: 14px;
   padding: 8px 12px;
   border: 2px solid ${tokens.ink};
   background: transparent;

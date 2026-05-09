@@ -11,14 +11,14 @@ export const FooterSection = styled.section.withConfig({ componentId: 'footer-se
 
 export const FooterTitle = styled.div.withConfig({ componentId: 'footer__title' })`
   font-family: ${tokens.fontDisplay};
-  font-size: clamp(72px, 9vw, 144px);
+  font-size: clamp(83px, 9vw, 166px);
   line-height: 0.88;
   text-transform: uppercase;
   letter-spacing: -0.02em;
 `;
 
 export const FooterPara = styled.p.withConfig({ componentId: 'footer__para' })`
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.65;
   margin: 24px 0;
   color: rgba(239, 234, 224, 0.92);
@@ -31,14 +31,14 @@ export const Contacts = styled.div.withConfig({ componentId: 'footer__contacts' 
   display: flex;
   gap: 48px;
   flex-wrap: wrap;
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 `;
 
 export const ContactValue = styled.strong.withConfig({ componentId: 'footer__contact-value' })`
   color: ${tokens.bg};
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.1em;
   transition: color 0.25s;
 `;
@@ -54,5 +54,5 @@ export const ContactItem = styled.div.withConfig({ componentId: 'footer__contact
 export const ContactLabel = styled.div.withConfig({ componentId: 'footer__contact-label' })`
   color: rgba(239, 234, 224, 0.7);
   margin-bottom: 4px;
-  font-size: 9px;
+  font-size: 14px;
 `;

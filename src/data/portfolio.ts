@@ -28,7 +28,7 @@ export const stats: Stat[] = [
   {
     id: 'year',
     value: '2021',
-    label: 'aprofundamento prático em IA Aplicada',
+    label: 'dulaso tecnologia - inovação empresarial',
     description:
       'Conectando LLMs a fluxos reais de trabalho. Construindo o <strong>Jaime</strong> (assistente local em Node.js/Ollama) focado em privacidade, agentes e automações.'
   }
@@ -76,7 +76,7 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Operação',
     company: 'Prowork',
     description:
-      'Primeira imersão em problemas reais. Atendendo usuários de PDV, comecei a documentar soluções, criar treinamentos e programar pequenos scripts.'
+      'Suporte a usuários de PDV por telefone. Criei manuais e treinamentos que reduziram o volume de chamados — e o tempo liberado virou oportunidade para aprender a programar soluções integradas ao banco de dados Progress.'
   },
   {
     id: 'ads',
@@ -98,7 +98,7 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Front-end',
     company: 'Vitrio',
     description:
-      'Criei interfaces otimizadas para campanhas de e-commerce e landing pages, conectando design e tecnologia com foco em performance e responsividade.'
+      'Desenvolvimento front-end em e-commerces, landing pages e GTM. Integração próxima com Design e Projetos introduziu Agile, GRIDs e Git ao time — e de lá saíram os primeiros templates reutilizáveis para novos projetos.'
   },
   {
     id: 'leadership',
@@ -109,7 +109,7 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Liderança',
     company: 'Avanti! Tecnologia',
     description:
-      'Mantive sistemas legados e estruturei padrões novos. Liderança técnica virou treino de pessoas, revisão de processos e remoção de obstáculos.'
+      'Manutenção de e-commerces legados com JavaScript intenso. Virei referência técnica do time, desobstruindo impedimentos e treinando novos colaboradores. Promovido a Líder Técnico: estruturei práticas de Agile, versionamento e padrões de desenvolvimento.'
   },
   {
     id: 'integration',
@@ -120,18 +120,55 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Integração',
     company: 'Performa_IT',
     description:
-      'Mergulho em integrações profundas, estabilidade de marketplaces e conexões entre sistemas legados, orientando equipe e reduzindo retrabalho.'
+      'Sênior com foco em discovery e integrações com marketplaces — evoluções e correções de bugs para atender demandas críticas de plataforma. Em paralelo, treinei e orientei programadores nas melhores práticas do ambiente.'
   },
   {
-    id: 'ai',
+    id: 'consulting',
     year: 2021,
     code: '07',
-    title: 'Sênior / IA Aplicada',
-    period: '2021 — atual',
-    badge: 'IA Aplicada',
-    company: 'Growe / Consultoria',
+    title: 'Consultor & Dev Sênior PJ',
+    period: '2026 — atual',
+    badge: 'Consultoria',
+    company: 'Autônomo',
     description:
-      'Síntese da bagagem em projetos críticos, decisões de arquitetura, full stack PHP, escalabilidade e imersão prática em IA aplicada com agentes e automações.'
+      'Abertura da empresa em novembro de 2021. Um período rico de intensa comunicação com diferentes áreas e setores, aprendendo sobre negócios e como a tecnologia pode impulsionar a evolução de empresas.',
+    subsections: [
+      {
+        year: 2021,
+        company: 'eNext',
+        badge: 'E-commerce',
+        description:
+          'Capacitei e gerenciei um time júnior de desenvolvedores para atender os e-commerces da agência. Participei de rituais Ágeis e atuei como elo entre Designers, Gerentes de Projetos, Desenvolvedores e Diretoria.'
+      },
+      {
+        year: 2022,
+        company: 'Dendrix',
+        badge: 'E-commerce',
+        description:
+          'Evoluções em nova versão do e-commerce: reestruturação de páginas para responsividade e melhoria dos fluxos de cadastro e pagamento. Trabalho próximo ao negócio para refinar a UX do produto final.'
+      },
+      {
+        year: 2023,
+        company: 'Jobspace',
+        badge: 'Template & Treino',
+        description:
+          'Desenvolvimento de template reutilizável para a agência, manutenção e evolução de e-commerces. Ministrei dois treinamentos técnicos de 6 meses para o time interno de desenvolvedores.'
+      },
+      {
+        year: 2025,
+        company: 'Simplie',
+        badge: 'Full Stack',
+        description:
+          'Atuação próxima a clientes e parceiros, validando ideias e evoluindo e-commerces. Desenvolvimento e integrações com ferramentas para atender demandas de negócio.'
+      },
+      {
+        year: 2026,
+        company: 'Growe',
+        badge: 'Tech Lead',
+        description:
+          'Início como Tech Lead, direcionando decisões técnicas e arquitetura. Desenvolvimento Full Stack PHP de ecossistemas robustos — do banco de dados às interfaces — garantindo escalabilidade e performance em ambientes complexos.'
+      }
+    ]
   }
 ];
 

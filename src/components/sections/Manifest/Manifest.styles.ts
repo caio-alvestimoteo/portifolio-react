@@ -25,7 +25,7 @@ export const Grid = styled.div.withConfig({ componentId: 'manifest__grid' })`
   align-items: start;
 
   p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.75;
     margin: 0 0 16px;
     color: rgba(239, 234, 224, 0.85);
@@ -46,7 +46,7 @@ export const Radar = styled.div.withConfig({ componentId: 'manifest__radar' })`
 `;
 
 export const RadarTitle = styled.h4.withConfig({ componentId: 'manifest__radar-title' })`
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: 0.22em;
   color: ${tokens.cyan};
   margin: 0 0 8px;

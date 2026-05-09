@@ -12,7 +12,7 @@ export const SkillsSection = styled.section.withConfig({ componentId: 'skills-se
 `;
 
 export const Subtitle = styled.div.withConfig({ componentId: 'skills__subtitle' })`
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.2em;
   color: ${tokens.muted};
   text-transform: uppercase;
@@ -20,7 +20,7 @@ export const Subtitle = styled.div.withConfig({ componentId: 'skills__subtitle' 
 `;
 
 export const Tag = styled.span.withConfig({ componentId: 'skills__tag' })<{ $accent?: 'red' | 'cyan'; $featured?: boolean }>`
-  font-size: 10px;
+  font-size: 14px;
   padding: 4px 8px;
   border: 1px solid;
   letter-spacing: 0.06em;
@@ -87,14 +87,14 @@ export const GroupNum = styled.div.withConfig({ componentId: 'skills__group-num'
   top: 14px;
   right: 16px;
   font-family: ${tokens.fontDisplay};
-  font-size: 14px;
+  font-size: 16px;
   color: ${({ $featured }) => ($featured ? tokens.yellow : tokens.red)};
   letter-spacing: -0.02em;
 `;
 
 export const GroupTitle = styled.div.withConfig({ componentId: 'skills__group-title' })`
   font-family: ${tokens.fontDisplay};
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin: 0 0 4px;
@@ -102,7 +102,7 @@ export const GroupTitle = styled.div.withConfig({ componentId: 'skills__group-ti
 `;
 
 export const GroupSub = styled.div.withConfig({ componentId: 'skills__group-sub' })<{ $featured?: boolean }>`
-  font-size: 9px;
+  font-size: 14px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: ${({ $featured }) => ($featured ? 'rgba(239, 234, 224, 0.6)' : tokens.muted)};

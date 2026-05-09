@@ -5,14 +5,14 @@ import { tokens } from '../tokens';
 
 const Value = styled.div.withConfig({ componentId: 'stat__value' })`
   font-family: ${tokens.fontDisplay};
-  font-size: clamp(28px, 3vw, 40px);
+  font-size: clamp(32px, 3vw, 46px);
   line-height: 1;
   color: ${tokens.ink};
   transition: color 0.2s;
 `;
 
 const Label = styled.div.withConfig({ componentId: 'stat__label' })`
-  font-size: 9px;
+  font-size: 14px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: ${tokens.muted};

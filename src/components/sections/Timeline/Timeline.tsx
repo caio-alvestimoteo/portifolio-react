@@ -5,6 +5,8 @@ import {
   TimelineSection, Subtitle, Track, Entry,
   EntryMeta, EntryYear, EntryCode, EntryBadge,
   EntryBody, EntryCompany, EntryPeriod,
+  SubtrackList, SubEntry, SubEntryHeader,
+  SubEntryYear, SubEntryCompany, SubEntryBadge, SubEntryDescription,
 } from './Timeline.styles';
 
 const Timeline: FC = () => {
@@ -34,6 +36,20 @@ const Timeline: FC = () => {
                 <h3>{entry.title}</h3>
                 <EntryCompany>{entry.company}</EntryCompany>
                 <p>{entry.description}</p>
+                {entry.subsections && (
+                  <SubtrackList>
+                    {entry.subsections.map((sub) => (
+                      <SubEntry key={`${sub.year}-${sub.company}`}>
+                        <SubEntryHeader>
+                          <SubEntryYear>{sub.year}</SubEntryYear>
+                          <SubEntryCompany>{sub.company}</SubEntryCompany>
+                          <SubEntryBadge>{sub.badge}</SubEntryBadge>
+                        </SubEntryHeader>
+                        <SubEntryDescription>{sub.description}</SubEntryDescription>
+                      </SubEntry>
+                    ))}
+                  </SubtrackList>
+                )}
                 <EntryPeriod>▸ {entry.period}</EntryPeriod>
               </EntryBody>
             </Entry>

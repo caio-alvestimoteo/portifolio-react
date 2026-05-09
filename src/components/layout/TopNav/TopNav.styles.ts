@@ -10,7 +10,7 @@ export const Nav = styled.div.withConfig({ componentId: 'top-nav' })`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   pointer-events: none;

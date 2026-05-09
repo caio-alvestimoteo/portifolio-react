@@ -26,7 +26,7 @@ export const Topline = styled.div.withConfig({ componentId: 'hero__topline' })`
   align-items: center;
   border-bottom: 2px solid ${tokens.ink};
   padding-bottom: 8px;
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
 `;
@@ -44,7 +44,7 @@ export const Layout = styled.div.withConfig({ componentId: 'hero__layout' })`
 
 export const Title = styled.h1.withConfig({ componentId: 'hero__title' })`
   font-family: ${tokens.fontDisplay};
-  font-size: clamp(96px, 13vw, 220px);
+  font-size: clamp(110px, 13vw, 253px);
   line-height: 0.84;
   margin: 0;
   letter-spacing: -0.04em;
@@ -55,8 +55,8 @@ export const Title = styled.h1.withConfig({ componentId: 'hero__title' })`
   &:hover { transform: translateX(-4px); }
   &:hover span { color: ${tokens.ink}; }
 
-  @media (max-width: 1750px) { font-size: clamp(86.4px, 11.7vw, 198px); }
-  @media (max-width: 650px) { font-size: clamp(58.4px, 11.7vw, 198px); }
+  @media (max-width: 1750px) { font-size: clamp(99px, 11.7vw, 228px); }
+  @media (max-width: 650px) { font-size: clamp(67px, 11.7vw, 228px); }
 `;
 
 export const TitleAccent = styled.span.withConfig({ componentId: 'hero__title-accent' })`
@@ -66,7 +66,7 @@ export const TitleAccent = styled.span.withConfig({ componentId: 'hero__title-ac
 `;
 
 export const Role = styled.div.withConfig({ componentId: 'hero__role' })`
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   margin: 18px 0 24px;
@@ -76,7 +76,7 @@ export const Role = styled.div.withConfig({ componentId: 'hero__role' })`
 `;
 
 export const Lead = styled.p.withConfig({ componentId: 'hero__lead' })`
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
   max-width: 560px;
   margin: 0 0 24px;
@@ -111,13 +111,13 @@ export const CardLabel = styled.div.withConfig({ componentId: 'hero__card-label'
   background: ${tokens.ink};
   color: ${tokens.bg};
   padding: 4px 10px;
-  font-size: 9px;
+  font-size: 14px;
   letter-spacing: 0.18em;
 `;
 
 export const CardJp = styled.div.withConfig({ componentId: 'hero__card-jp' })`
   font-family: ${tokens.fontJp};
-  font-size: clamp(48px, 6vw, 80px);
+  font-size: clamp(55px, 6vw, 92px);
   font-weight: 900;
   color: ${tokens.red};
   line-height: 0.9;
@@ -126,7 +126,7 @@ export const CardJp = styled.div.withConfig({ componentId: 'hero__card-jp' })`
 `;
 
 export const CardJpSub = styled.div.withConfig({ componentId: 'hero__card-jp-sub' })`
-  font-size: 10px;
+  font-size: 14px;
   color: ${tokens.muted};
   letter-spacing: 0.2em;
   text-align: right;
@@ -146,7 +146,7 @@ export const ScrollHint = styled.div.withConfig({ componentId: 'hero__scroll-hin
   position: absolute;
   bottom: 32px;
   left: 8vw;
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   display: flex;

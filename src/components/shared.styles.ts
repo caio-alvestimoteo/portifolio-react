@@ -12,7 +12,7 @@ export const sectionBase = css`
 
 export const h2Base = css`
   font-family: ${tokens.fontDisplay};
-  font-size: clamp(70px, 9vw, 160px);
+  font-size: clamp(81px, 9vw, 184px);
   line-height: 0.85;
   margin: 0 0 24px;
   color: inherit;
@@ -28,7 +28,7 @@ export const h2Base = css`
   }
 
   @media (max-width: 650px) {
-    font-size: clamp(35px, 4.5vw, 80px);
+    font-size: clamp(40px, 4.5vw, 92px);
   }
 `;
 
@@ -117,7 +117,7 @@ export const SectionH2 = styled.h2.withConfig({ componentId: 'shared-section-h2'
 
 export const Eyebrow = styled.div.withConfig({ componentId: 'shared-eyebrow' })<{ $dark?: boolean }>`
   font-family: ${tokens.fontMono};
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: ${({ $dark }) => ($dark ? tokens.cyan : tokens.red)};

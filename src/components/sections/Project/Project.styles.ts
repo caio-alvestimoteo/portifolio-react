@@ -18,7 +18,7 @@ export const ProjectSection = styled.section.withConfig({ componentId: 'project-
 
   h2 {
     font-family: ${tokens.fontDisplay};
-    font-size: clamp(61.6px, 7.92vw, 140.8px);
+    font-size: clamp(71px, 7.92vw, 162px);
     line-height: 0.85;
     margin: 0 0 24px;
     color: inherit;
@@ -46,7 +46,7 @@ export const Layout = styled.div.withConfig({ componentId: 'project__layout' })`
 `;
 
 export const Lead = styled.p.withConfig({ componentId: 'project__lead' })`
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
   margin: 0 0 24px;
   color: rgba(10, 8, 8, 0.82);
@@ -58,7 +58,7 @@ export const Quote = styled.blockquote.withConfig({ componentId: 'project__quote
   background: ${tokens.yellow};
   padding: 18px 22px;
   margin: 0 0 24px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.65;
   color: ${tokens.ink};
   font-style: italic;
@@ -92,7 +92,7 @@ export const Panel = styled.div.withConfig({ componentId: 'project__panel' })`
   }
 
   label {
-    font-size: 10px;
+    font-size: 14px;
     letter-spacing: 0.14em;
     color: ${tokens.red};
     display: block;
@@ -102,7 +102,7 @@ export const Panel = styled.div.withConfig({ componentId: 'project__panel' })`
   }
 
   p {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.65;
     color: rgba(10, 8, 8, 0.75);
     margin: 0 0 8px;
@@ -111,14 +111,14 @@ export const Panel = styled.div.withConfig({ componentId: 'project__panel' })`
 
 export const PanelTitle = styled.strong.withConfig({ componentId: 'project__panel-title' })`
   font-family: ${tokens.fontDisplay};
-  font-size: 18px;
+  font-size: 21px;
   display: block;
   margin-bottom: 4px;
   text-transform: uppercase;
 `;
 
 export const PanelEyebrow = styled.div.withConfig({ componentId: 'project__panel-eyebrow' })`
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: 0.16em;
   color: ${tokens.cyan};
   margin-bottom: 12px;

@@ -12,7 +12,7 @@ export const TimelineSection = styled.section.withConfig({ componentId: 'timelin
 `;
 
 export const Subtitle = styled.div.withConfig({ componentId: 'timeline__subtitle' })`
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.18em;
   color: ${tokens.muted};
   text-transform: uppercase;
@@ -55,7 +55,7 @@ export const Entry = styled.article.withConfig({ componentId: 'timeline__entry' 
 
   h3 {
     font-family: ${tokens.fontDisplay};
-    font-size: 24px;
+    font-size: 28px;
     margin: 0 0 4px;
     text-transform: uppercase;
     line-height: 1.1;
@@ -65,7 +65,7 @@ export const Entry = styled.article.withConfig({ componentId: 'timeline__entry' 
   &:hover h3 { color: ${tokens.red}; }
 
   p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.7;
     color: rgba(10, 8, 8, 0.78);
     margin: 0 0 8px;
@@ -86,7 +86,7 @@ export const EntryMeta = styled.div.withConfig({ componentId: 'timeline__entry-m
 
 export const EntryYear = styled.div.withConfig({ componentId: 'timeline__entry-year' })`
   font-family: ${tokens.fontDisplay};
-  font-size: 56px;
+  font-size: 64px;
   line-height: 1;
   color: ${tokens.red};
   transition: color 0.25s, transform 0.25s;
@@ -97,11 +97,11 @@ export const EntryYear = styled.div.withConfig({ componentId: 'timeline__entry-y
     transform: scale(1.04);
   }
 
-  @media (max-width: 900px) { font-size: 40px; }
+  @media (max-width: 900px) { font-size: 46px; }
 `;
 
 export const EntryCode = styled.div.withConfig({ componentId: 'timeline__entry-code' })`
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: 0.2em;
   color: ${tokens.muted};
 `;
@@ -110,7 +110,7 @@ export const EntryBadge = styled.div.withConfig({ componentId: 'timeline__entry-
   display: inline-block;
   background: ${tokens.ink};
   color: ${tokens.bg};
-  font-size: 9px;
+  font-size: 14px;
   padding: 3px 8px;
   letter-spacing: 0.16em;
   align-self: flex-start;
@@ -125,7 +125,7 @@ export const EntryBody = styled.div.withConfig({ componentId: 'timeline__entry-b
 `;
 
 export const EntryCompany = styled.div.withConfig({ componentId: 'timeline__entry-company' })`
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.14em;
   color: ${tokens.muted};
   text-transform: uppercase;
@@ -133,8 +133,62 @@ export const EntryCompany = styled.div.withConfig({ componentId: 'timeline__entr
 `;
 
 export const EntryPeriod = styled.div.withConfig({ componentId: 'timeline__entry-period' })`
-  font-size: 10px;
+  font-size: 14px;
   color: ${tokens.cyan};
   letter-spacing: 0.14em;
   margin-top: 8px;
+`;
+
+export const SubtrackList = styled.div.withConfig({ componentId: 'timeline__subtrack' })`
+  margin-top: 20px;
+  border-left: 1px solid ${tokens.line};
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+`;
+
+export const SubEntry = styled.div.withConfig({ componentId: 'timeline__sub-entry' })`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`;
+
+export const SubEntryHeader = styled.div.withConfig({ componentId: 'timeline__sub-header' })`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+`;
+
+export const SubEntryYear = styled.span.withConfig({ componentId: 'timeline__sub-year' })`
+  font-family: ${tokens.fontDisplay};
+  font-size: 14px;
+  color: ${tokens.red};
+`;
+
+export const SubEntryCompany = styled.span.withConfig({ componentId: 'timeline__sub-company' })`
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  color: ${tokens.muted};
+  text-transform: uppercase;
+`;
+
+export const SubEntryBadge = styled.span.withConfig({ componentId: 'timeline__sub-badge' })`
+  background: rgba(215, 38, 56, 0.1);
+  color: ${tokens.red};
+  font-size: 14px;
+  padding: 2px 6px;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+`;
+
+export const SubEntryDescription = styled.p.withConfig({ componentId: 'timeline__sub-desc' })`
+  && {
+    font-size: 14px;
+    color: rgba(10, 8, 8, 0.62);
+    margin: 0;
+    line-height: 1.65;
+    max-width: 680px;
+  }
 `;

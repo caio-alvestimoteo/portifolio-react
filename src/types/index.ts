@@ -1,3 +1,10 @@
+export interface SubsectionEntry {
+  year: number;
+  company: string;
+  badge: string;
+  description: string;
+}
+
 export interface TimelineEntry {
   id: string;
   year: number;
@@ -7,6 +14,7 @@ export interface TimelineEntry {
   badge: string;
   company: string;
   description: string;
+  subsections?: SubsectionEntry[];
 }
 
 export interface Stat {

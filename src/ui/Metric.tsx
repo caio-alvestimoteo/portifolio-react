@@ -32,7 +32,7 @@ const RadarItem = styled.div.withConfig({ componentId: 'metric' })`
 `;
 
 const RadarLabel = styled.div.withConfig({ componentId: 'metric__label' })`
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: ${tokens.cyan};
@@ -40,7 +40,7 @@ const RadarLabel = styled.div.withConfig({ componentId: 'metric__label' })`
 `;
 
 const RadarValue = styled.div.withConfig({ componentId: 'metric__value' })`
-  font-size: 13px;
+  font-size: 14px;
   color: ${tokens.bg};
 `;
 
