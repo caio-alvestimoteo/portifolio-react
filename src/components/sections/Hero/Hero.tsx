@@ -14,8 +14,8 @@ const Hero: FC = () => {
     <HeroSection id="hero" data-name="HERO">
       <SectionInner>
         <Topline className="reveal">
-          <strong>SECTOR.03A-77</strong>
-          <span>DEV SR / IA APLICADA — AUTOMAÇÕES</span>
+          <strong>Portfolio Executivo</strong>
+          <span>Curiosidade Técnica / E-commerce / Integrações / IA Local</span>
         </Topline>
         <Layout>
           <div>
@@ -23,13 +23,14 @@ const Hero: FC = () => {
               CAIO<TitleAccent>TIMOTEO</TitleAccent>
             </Title>
             <Role className="reveal" style={{ ['--i' as string]: 1 }}>
-              ▸ <strong>DESENVOLVEDOR SÊNIOR</strong> / IA APLICADA — AUTOMAÇÕES — INTEGRAÇÕES
+              ▸ <strong>DEV SÊNIOR</strong> EXPLORANDO IA APLICADA — MOMENTO ATUAL
             </Role>
             <Lead className="reveal" style={{ ['--i' as string]: 2 }}>
-              15+ anos transformando problemas em soluções reais. Bagagem em suporte, front-end, e-commerce, integrações e
-              liderança técnica. Hoje estou direcionando essa experiência para  <strong>IA Aplicada</strong>, automações e agentes.
+              Desde criança, sempre quis entender como as coisas funcionam. Essa curiosidade me levou da manutenção de computadores ao suporte técnico, do suporte ao front-end, do front-end ao e-commerce, das integrações à liderança técnica.
 
-              Meu foco é construir ferramentas que ajudem pessoas e times a ganhar produtividade, organizar conhecimento, reduzir tarefas repetitivas e transformar processos em soluções mais inteligentes.
+              Hoje, direciono essa mesma curiosidade para IA aplicada: quero entender como modelos, automações e agentes podem resolver problemas reais sem apagar a bagagem que construí ao longo do caminho.
+
+              O Jaime é meu laboratório pessoal: um assistente local de IA criado para estudar, testar e transformar curiosidade em código real.
             </Lead>
             <Chips className="reveal" style={{ ['--i' as string]: 3 }}>
               {chips.map((chip) => (
@@ -38,13 +39,13 @@ const Hero: FC = () => {
             </Chips>
           </div>
           <Card className="reveal reveal--from-right" style={{ ['--i' as string]: 2 }}>
-            <CardLabel>SECTOR.03A-77</CardLabel>
+            <CardLabel>MOMENTO ATUAL</CardLabel>
             <CardJp>
               進化
               <br />
               武士道
             </CardJp>
-            <CardJpSub>EVOLUTION / AI / BUSHIDO</CardJpSub>
+            <CardJpSub>DEV SÊNIOR EXPLORANDO IA APLICADA</CardJpSub>
             <CardStats>
               {stats.map((stat, index) => (
                 <div key={stat.id} className="reveal reveal--from-bottom" style={{ ['--i' as string]: index }}>

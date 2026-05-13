@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { tokens } from '../../../tokens';
 
-export const Nav = styled.div.withConfig({ componentId: 'top-nav' })`
+export const Nav = styled.div.withConfig({ componentId: 'top-nav' })<{ $scrolled: boolean }>`
   position: fixed;
   top: 14px;
   left: 24px;
@@ -18,7 +18,7 @@ export const Nav = styled.div.withConfig({ componentId: 'top-nav' })`
   color: #fff;
 `;
 
-export const Brand = styled.div.withConfig({ componentId: 'top-nav__brand' })`
+export const Brand = styled.div.withConfig({ componentId: 'top-nav__brand' })<{ $scrolled: boolean }>`
   display: flex;
   gap: 16px;
   align-items: center;
@@ -29,7 +29,7 @@ export const Brand = styled.div.withConfig({ componentId: 'top-nav__brand' })`
   }
 `;
 
-export const Controls = styled.div.withConfig({ componentId: 'top-nav__controls' })`
+export const Controls = styled.div.withConfig({ componentId: 'top-nav__controls' })<{ $scrolled: boolean }>`
   display: flex;
   gap: 8px;
   pointer-events: auto;

@@ -1,8 +1,26 @@
+export interface PreCareerEntry {
+  year: number;
+  title: string;
+  description: string;
+  image?: string;
+}
+
+export interface TimelineEvent {
+  date: string;
+  label: string;
+}
+
+export interface EntryChip {
+  name: string;
+  accent?: 'red' | 'cyan';
+}
+
 export interface SubsectionEntry {
   year: number;
   company: string;
   badge: string;
   description: string;
+  chips?: EntryChip[];
 }
 
 export interface TimelineEntry {
@@ -14,6 +32,9 @@ export interface TimelineEntry {
   badge: string;
   company: string;
   description: string;
+  chips?: EntryChip[];
+  events?: TimelineEvent[];
+  tips?: string[];
   subsections?: SubsectionEntry[];
 }
 

@@ -4,6 +4,7 @@ import type {
   Metric,
   NavSection,
   ParallaxLayer,
+  PreCareerEntry,
   SocialLink,
   StackGroup,
   Stat,
@@ -55,6 +56,34 @@ export const manifestData = {
   ]
 };
 
+export const preCareerData: PreCareerEntry[] = [
+  {
+    year: 2005,
+    title: 'Curso de Hardware',
+    description: 'Primeiro contato técnico: trocava peças, formatava máquinas para amigos e família. A curiosidade virou estudo.',
+  },
+  {
+    year: 2006,
+    title: 'Linux & Kernel',
+    description: 'Trabalhava com o professor do curso. Recompilava kernel do Linux — descobrindo que software tem camadas mais profundas que a interface.',
+  },
+  {
+    year: 2007,
+    title: 'Servidores & Cabeamento',
+    description: 'Primeiro contato com ambientes corporativos: servidores Windows e cabeamento estruturado. Suporte informal com responsabilidade real.',
+  },
+  {
+    year: 2008,
+    title: 'Manutenção Plena',
+    description: 'Hardware e software em profundidade. Diagnóstico, reparo e suporte a clientes — aprendendo a resolver problemas sob pressão.',
+  },
+  {
+    year: 2009,
+    title: 'Primeira Assistência Técnica',
+    description: 'Minha primeira empresa. Primeiro negócio próprio — e a primeira lição real sobre autonomia, cliente e entrega.',
+  },
+];
+
 export const timelineData: TimelineEntry[] = [
   {
     id: 'network',
@@ -65,7 +94,21 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Formação',
     company: 'Faculdade Impacta',
     description:
-      'O início foi na infraestrutura. Aprender redes e raciocínio sistêmico me deu a base para ler ambientes técnicos complexos.'
+      'O início foi na infraestrutura. Aprender redes e raciocínio sistêmico me deu a base para ler ambientes técnicos complexos.',
+    chips: [
+      { name: 'TCP/IP', accent: 'cyan' },
+      { name: 'Infraestrutura', accent: 'cyan' },
+      { name: 'Redes LAN/WAN' },
+      { name: 'Raciocínio sistêmico' },
+    ],
+    events: [
+      { date: '2010', label: 'Início do curso de Redes' },
+      { date: '2012', label: 'Conclusão e entrada no mercado' },
+    ],
+    tips: [
+      'Redes ensinam a pensar em camadas — igual a software.',
+      'Base lógica que sustenta tudo que veio depois.',
+    ],
   },
   {
     id: 'support',
@@ -76,7 +119,21 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Operação',
     company: 'Prowork',
     description:
-      'Suporte a usuários de PDV por telefone. Criei manuais e treinamentos que reduziram o volume de chamados — e o tempo liberado virou oportunidade para aprender a programar soluções integradas ao banco de dados Progress.'
+      'Suporte a usuários de PDV por telefone. Criei manuais e treinamentos que reduziram o volume de chamados — e o tempo liberado virou oportunidade para aprender a programar soluções integradas ao banco de dados Progress.',
+    chips: [
+      { name: 'PDV / Totvs' },
+      { name: 'Progress DB' },
+      { name: 'Documentação' },
+      { name: 'Treinamento' },
+    ],
+    events: [
+      { date: '2012', label: 'Manuais que reduziram chamados repetitivos' },
+      { date: '2013', label: 'Primeiros scripts no banco Progress' },
+    ],
+    tips: [
+      'Documentar bem resolve mais do que resolver rápido.',
+      'Tempo ocioso virou aprendizado: primeiros scripts do banco.',
+    ],
   },
   {
     id: 'ads',
@@ -87,7 +144,21 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Formação',
     company: 'Faculdade Impacta',
     description:
-      'A vontade de construir soluções de forma mais robusta me levou ao desenvolvimento de software e consolidou minha transição definitiva para o web.'
+      'A vontade de construir soluções de forma mais robusta me levou ao desenvolvimento de software e consolidou minha transição definitiva para o web.',
+    chips: [
+      { name: 'PHP' },
+      { name: 'MySQL' },
+      { name: 'JavaScript' },
+      { name: 'Lógica de programação', accent: 'cyan' },
+    ],
+    events: [
+      { date: '2013', label: 'Início do curso de ADS' },
+      { date: '2015', label: 'Conclusão e primeiro emprego em dev' },
+    ],
+    tips: [
+      'Estudar enquanto trabalhava foi difícil. E necessário.',
+      'ADS consolidou a transição definitiva: de infra para código.',
+    ],
   },
   {
     id: 'frontend',
@@ -98,7 +169,23 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Front-end',
     company: 'Vitrio',
     description:
-      'Desenvolvimento front-end em e-commerces, landing pages e GTM. Integração próxima com Design e Projetos introduziu Agile, GRIDs e Git ao time — e de lá saíram os primeiros templates reutilizáveis para novos projetos.'
+      'Desenvolvimento front-end em e-commerces, landing pages e GTM. Integração próxima com Design e Projetos introduziu Agile, GRIDs e Git ao time — e de lá saíram os primeiros templates reutilizáveis para novos projetos.',
+    chips: [
+      { name: 'HTML/CSS', accent: 'cyan' },
+      { name: 'JavaScript', accent: 'cyan' },
+      { name: 'GTM' },
+      { name: 'Git' },
+      { name: 'E-commerce' },
+      { name: 'Agile' },
+    ],
+    events: [
+      { date: '2016', label: 'Introdução do Git no time de dev' },
+      { date: '2017', label: 'Templates reutilizáveis para novos projetos' },
+    ],
+    tips: [
+      'E-commerce ensina performance e conversão ao mesmo tempo.',
+      'Templates criados aqui foram usados por anos depois.',
+    ],
   },
   {
     id: 'leadership',
@@ -109,7 +196,22 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Liderança',
     company: 'Avanti! Tecnologia',
     description:
-      'Manutenção de e-commerces legados com JavaScript intenso. Virei referência técnica do time, desobstruindo impedimentos e treinando novos colaboradores. Promovido a Líder Técnico: estruturei práticas de Agile, versionamento e padrões de desenvolvimento.'
+      'Manutenção de e-commerces legados com JavaScript intenso. Virei referência técnica do time, desobstruindo impedimentos e treinando novos colaboradores. Promovido a Líder Técnico: estruturei práticas de Agile, versionamento e padrões de desenvolvimento.',
+    chips: [
+      { name: 'JavaScript', accent: 'cyan' },
+      { name: 'Liderança técnica', accent: 'red' },
+      { name: 'Agile' },
+      { name: 'Mentoria' },
+      { name: 'Legado' },
+    ],
+    events: [
+      { date: '2018', label: 'Promoção a Líder Técnico' },
+      { date: '2019', label: 'Time estruturado com Agile + Git + padrões' },
+    ],
+    tips: [
+      'Ser referência técnica é diferente de ser o melhor do time.',
+      'Aprendi mais ensinando do que estudando sozinho.',
+    ],
   },
   {
     id: 'integration',
@@ -120,18 +222,51 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Integração',
     company: 'Performa_IT',
     description:
-      'Sênior com foco em discovery e integrações com marketplaces — evoluções e correções de bugs para atender demandas críticas de plataforma. Em paralelo, treinei e orientei programadores nas melhores práticas do ambiente.'
+      'Sênior com foco em discovery e integrações com marketplaces — evoluções e correções de bugs para atender demandas críticas de plataforma. Em paralelo, treinei e orientei programadores nas melhores práticas do ambiente.',
+    chips: [
+      { name: 'Node.js', accent: 'cyan' },
+      { name: 'APIs', accent: 'cyan' },
+      { name: 'Marketplaces' },
+      { name: 'Discovery' },
+      { name: 'Mentoria' },
+    ],
+    events: [
+      { date: '2020', label: 'Discovery e integrações críticas' },
+      { date: '2021', label: 'Sênior referência técnica do time' },
+    ],
+    tips: [
+      'Marketplace exige pensar em falha, retry e consistência.',
+      'Treinei devs enquanto resolvia bugs críticos em produção.',
+    ],
   },
   {
     id: 'consulting',
     year: 2021,
     code: '07',
     title: 'Consultor & Dev Sênior PJ',
-    period: '2026 — atual',
+    period: '2021 — atual',
     badge: 'Consultoria',
     company: 'Autônomo',
     description:
       'Abertura da empresa em novembro de 2021. Um período rico de intensa comunicação com diferentes áreas e setores, aprendendo sobre negócios e como a tecnologia pode impulsionar a evolução de empresas.',
+    chips: [
+      { name: 'PHP', accent: 'red' },
+      { name: 'Node.js', accent: 'cyan' },
+      { name: 'TypeScript' },
+      { name: 'E-commerce' },
+      { name: 'Tech Lead' },
+      { name: 'IA Aplicada', accent: 'red' },
+    ],
+    events: [
+      { date: 'Nov 2021', label: 'Abertura da empresa' },
+      { date: '2024', label: 'Início do projeto Jaime (IA local)' },
+      { date: '2026', label: 'Tech Lead na Growe' },
+    ],
+    tips: [
+      'PJ multiplicou o aprendizado: cada cliente, um contexto novo.',
+      'Cada empresa ensinou algo que ambiente interno nunca ensinaria.',
+      'O Jaime nasceu aqui: curiosidade virando ferramenta real.',
+    ],
     subsections: [
       {
         year: 2021,

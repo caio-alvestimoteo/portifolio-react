@@ -5,6 +5,7 @@ import { Nav, Brand, Controls, Dot } from './TopNav.styles';
 
 const TopNav: FC = () => {
   const [activeSection, setActiveSection] = useState(navSections[0]?.id ?? '');
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
     const updateActiveSection = () => {
@@ -17,6 +18,7 @@ const TopNav: FC = () => {
       });
 
       setActiveSection(nextActive);
+      setHasScrolled(window.scrollY > 0);
     };
 
     window.addEventListener('scroll', updateActiveSection, { passive: true });
@@ -30,12 +32,12 @@ const TopNav: FC = () => {
   }, []);
 
   return (
-    <Nav>
-      <Brand>
+    <Nav $scrolled={hasScrolled}>
+      <Brand $scrolled={hasScrolled}>
         <strong>CAIO TIMOTEO</strong>
         <span>// PORTFOLIO 2026 / FILE-77.A1</span>
       </Brand>
-      <Controls>
+      <Controls $scrolled={hasScrolled}>
         {navSections.map((section) => (
           <Dot
             key={section.id}
