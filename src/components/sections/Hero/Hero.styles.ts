@@ -116,13 +116,36 @@ export const CardLabel = styled.div.withConfig({ componentId: 'hero__card-label'
 `;
 
 export const CardJp = styled.div.withConfig({ componentId: 'hero__card-jp' })`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 24px 0 8px;
+`;
+
+export const CardJpPair = styled.div.withConfig({ componentId: 'hero__card-jp-pair' })`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  & + & { margin-top: 6px; }
+`;
+
+export const CardJpKanji = styled.div.withConfig({ componentId: 'hero__card-jp-kanji' })`
   font-family: ${tokens.fontJp};
   font-size: clamp(55px, 6vw, 92px);
   font-weight: 900;
   color: ${tokens.red};
   line-height: 0.9;
-  margin: 24px 0 8px;
-  text-align: right;
+`;
+
+export const CardJpGloss = styled.div.withConfig({ componentId: 'hero__card-jp-gloss' })`
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: ${tokens.muted};
+  opacity: 0.6;
+  margin-top: 5px;
+  padding: 8px;
 `;
 
 export const CardJpSub = styled.div.withConfig({ componentId: 'hero__card-jp-sub' })`

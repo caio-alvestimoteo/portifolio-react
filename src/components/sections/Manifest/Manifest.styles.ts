@@ -48,7 +48,7 @@ export const Radar = styled.div.withConfig({ componentId: 'manifest__radar' })`
 export const RadarTitle = styled.h4.withConfig({ componentId: 'manifest__radar-title' })`
   font-size: 14px;
   letter-spacing: 0.22em;
-  color: ${tokens.cyan};
+  color: ${tokens.yellow};
   margin: 0 0 8px;
   text-transform: uppercase;
   font-weight: 700;

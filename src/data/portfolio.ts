@@ -14,45 +14,51 @@ import type {
 export const stats: Stat[] = [
   {
     id: 'years',
-    value: '15+',
-    label: 'anos transformando problemas em soluções reais',
+    value: '10+',
+    label: 'anos de experiência prática em tecnologia',
     description:
-      'De evolução do <strong>suporte técnico</strong> à <strong>arquitetura de software</strong>. O foco sempre foi o usuário, ajudar a reduzir tarefas repetitivas, automatizar e destravar a operação do dia a dia.'
+      'De suporte técnico à <strong>arquitetura de software</strong>, passando por front-end, e-commerce, integrações e liderança técnica. Cada fase adicionou uma camada real de experiência.'
   },
   {
     id: 'fronts',
     value: '07',
-    label: 'frentes de atuação em tecnologia',
+    label: 'frentes conectadas: suporte, web, e-commerce, integrações, liderança, arquitetura e IA aplicada',
     description:
-      'Atuação sênior passando por <strong>desenvolvimento front-end, plataformas de e-commerce, integrações de APIs</strong> e liderança técnica de times em projetos críticos.'
+      'Atuação sênior conectando <strong>desenvolvimento, produto, operação e liderança técnica</strong> em projetos que precisam funcionar em ambientes reais de negócio.'
   },
   {
     id: 'year',
-    value: '2021',
-    label: 'dulaso tecnologia - inovação empresarial',
+    value: 'Jaime',
+    label: 'laboratório pessoal de IA local, automações e produtividade técnica',
     description:
-      'Conectando LLMs a fluxos reais de trabalho. Construindo o <strong>Jaime</strong> (assistente local em Node.js/Ollama) focado em privacidade, agentes e automações.'
+      'Assistente local construído em <strong>Node.js e TypeScript</strong> com Ollama. Meu projeto prático para estudar IA aplicada com código real, privacidade e documentação viva.'
   }
 ];
 
 export const chips: ChipItem[] = [
+  { name: 'Tech Lead' },
+  { name: 'IA Aplicada' },
+  { name: 'Automações' },
   { name: 'Node.js' },
   { name: 'TypeScript' },
   { name: 'PHP' },
   { name: 'Ollama' },
   { name: 'APIs' },
-  { name: 'Automações' },
   { name: 'E-commerce' },
-  { name: 'IA Aplicada' }
+  { name: 'Integrações' },
+  { name: 'Arquitetura' },
+  { name: 'Jaime' }
 ];
 
 export const manifestData = {
   eyebrow: '02 / MANIFESTO',
-  title: 'MOMENTO',
-  accent: 'ATUAL.',
+  title: 'EXPERIÊNCIA REAL,',
+  accent: 'PRÓXIMA FASE.',
   paragraphs: [
-    'Toda a minha trajetória em tecnologia foi construída na prática, ouvindo pessoas e entendendo problemas reais de empresas. Ao longo de mais de 15 anos, transitei entre suporte técnico, desenvolvimento web, e-commerce, arquitetura de APIs e liderança de times.',
-    'Hoje, levo essa fundação sólida para o universo da Inteligência Artificial aplicada. Meu foco é prático: conectar modelos de linguagem a sistemas, APIs e fluxos de trabalho reais.'
+    'Minha carreira foi construída na prática. Comecei entendendo dificuldades de usuários, depois passei a criar interfaces, integrar sistemas, treinar desenvolvedores, apoiar decisões técnicas e participar de soluções que precisam funcionar em ambientes reais de negócio.',
+    'O ponto em comum sempre foi o mesmo: ouvir o problema, entender o contexto, organizar a informação e construir algo útil. Essa forma de trabalhar me acompanha desde o suporte até a liderança técnica.',
+    'Agora, levo essa base para IA aplicada. Meu foco não é tratar IA como promessa genérica, mas entender onde modelos de linguagem, automações, agentes e integrações podem reduzir retrabalho, organizar conhecimento, apoiar decisões e melhorar fluxos reais de trabalho.',
+    'Acredito que a IA ganha valor quando sai do discurso e entra no processo: conectada a sistemas, documentação, APIs, times, regras de negócio, segurança e responsabilidade técnica.'
   ]
 };
 
@@ -94,7 +100,7 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Formação',
     company: 'Faculdade Impacta',
     description:
-      'O início foi na infraestrutura. Aprender redes e raciocínio sistêmico me deu a base para ler ambientes técnicos complexos.',
+      'A formação em redes foi uma das primeiras bases da minha visão técnica. Ela me ensinou a pensar em camadas, conexões, dependências e pontos de falha. Antes de propor uma solução, é preciso entender como o sistema funciona.',
     chips: [
       { name: 'TCP/IP', accent: 'cyan' },
       { name: 'Infraestrutura', accent: 'cyan' },
@@ -119,7 +125,7 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Operação',
     company: 'Prowork',
     description:
-      'Suporte a usuários de PDV por telefone. Criei manuais e treinamentos que reduziram o volume de chamados — e o tempo liberado virou oportunidade para aprender a programar soluções integradas ao banco de dados Progress.',
+      'No suporte técnico, aprendi a ouvir usuários, entender dificuldades reais e identificar padrões em problemas recorrentes. Atendendo usuários de PDV, percebi que muitas dores não dependiam apenas de código, mas de clareza, documentação, treinamento e melhoria de processo.',
     chips: [
       { name: 'PDV / Totvs' },
       { name: 'Progress DB' },
@@ -144,7 +150,7 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Formação',
     company: 'Faculdade Impacta',
     description:
-      'A vontade de construir soluções de forma mais robusta me levou ao desenvolvimento de software e consolidou minha transição definitiva para o web.',
+      'A formação em Análise e Desenvolvimento de Sistemas consolidou minha transição para o desenvolvimento. Foi o momento de transformar observação, suporte e diagnóstico em construção mais estruturada de soluções digitais.',
     chips: [
       { name: 'PHP' },
       { name: 'MySQL' },
@@ -169,7 +175,7 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Front-end',
     company: 'Vitrio',
     description:
-      'Desenvolvimento front-end em e-commerces, landing pages e GTM. Integração próxima com Design e Projetos introduziu Agile, GRIDs e Git ao time — e de lá saíram os primeiros templates reutilizáveis para novos projetos.',
+      'No front-end, passei a enxergar a tecnologia pela experiência do usuário. Trabalhei com e-commerce, landing pages, responsividade, performance, GTM e colaboração próxima com design, projetos e negócio.',
     chips: [
       { name: 'HTML/CSS', accent: 'cyan' },
       { name: 'JavaScript', accent: 'cyan' },
@@ -196,7 +202,7 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Liderança',
     company: 'Avanti! Tecnologia',
     description:
-      'Manutenção de e-commerces legados com JavaScript intenso. Virei referência técnica do time, desobstruindo impedimentos e treinando novos colaboradores. Promovido a Líder Técnico: estruturei práticas de Agile, versionamento e padrões de desenvolvimento.',
+      'Na Avanti, aprofundei minha atuação em e-commerces e sistemas legados. Com o tempo, deixei de atuar apenas na entrega individual e passei a apoiar o time em desbloqueios técnicos, padrões de desenvolvimento, treinamentos e melhoria dos fluxos de trabalho.',
     chips: [
       { name: 'JavaScript', accent: 'cyan' },
       { name: 'Liderança técnica', accent: 'red' },
@@ -222,7 +228,7 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Integração',
     company: 'Performa_IT',
     description:
-      'Sênior com foco em discovery e integrações com marketplaces — evoluções e correções de bugs para atender demandas críticas de plataforma. Em paralelo, treinei e orientei programadores nas melhores práticas do ambiente.',
+      'Na Performa_IT, atuei como programador sênior em integrações, marketplaces, discovery técnico, evolução de funcionalidades e correção de bugs. Essa fase fortaleceu minha visão sobre sistemas conectados, estabilidade, manutenção e leitura de regras de negócio.',
     chips: [
       { name: 'Node.js', accent: 'cyan' },
       { name: 'APIs', accent: 'cyan' },
@@ -248,7 +254,7 @@ export const timelineData: TimelineEntry[] = [
     badge: 'Consultoria',
     company: 'Autônomo',
     description:
-      'Abertura da empresa em novembro de 2021. Um período rico de intensa comunicação com diferentes áreas e setores, aprendendo sobre negócios e como a tecnologia pode impulsionar a evolução de empresas.',
+      'Como PJ, passei a atuar em projetos diversos de tecnologia, conectando e-commerce, integrações, APIs, landing pages, RD Station, treinamento técnico, arquitetura e desenvolvimento full stack. Em projetos para empresas como eNext, Dendrix, Jobspace, Simplie e Growe, aprofundei minha capacidade de conversar com áreas diferentes, entender prioridades e transformar necessidades em soluções digitais.',
     chips: [
       { name: 'PHP', accent: 'red' },
       { name: 'Node.js', accent: 'cyan' },
@@ -308,34 +314,34 @@ export const timelineData: TimelineEntry[] = [
 ];
 
 export const techStack: Metric[] = [
-  { label: 'IA Aplicada', value: 'Aprofundamento prático' },
-  { label: 'Automações', value: 'Soluções internas' },
-  { label: 'Integrações', value: 'Bagagem sólida' },
-  { label: 'Liderança Técnica', value: 'Mentoria + arquitetura' },
-  { label: 'IA Local / Ollama', value: 'Projeto Jaime em evolução' }
+  { label: 'IA Aplicada', value: 'Estudo e construção de soluções práticas com modelos de linguagem, automações e assistentes.' },
+  { label: 'Automações', value: 'Transformação de rotinas repetitivas, informações dispersas e fluxos manuais em processos mais claros e produtivos.' },
+  { label: 'Integrações', value: 'Experiência consolidada conectando sistemas, APIs, plataformas, dados e regras de negócio.' },
+  { label: 'Liderança Técnica', value: 'Apoio a decisões técnicas, organização de padrões, orientação de pessoas e construção de clareza para times.' },
+  { label: 'IA Local / Jaime', value: 'Laboratório prático com Node.js, TypeScript, Ollama, CLI, histórico em Markdown e evolução para agentes e automações controladas.' }
 ];
 
 export const projectData = {
-  eyebrow: '04 / LABORATÓRIO PRÁTICO — JAIME // ASSISTENTE LOCAL DE IA',
+  eyebrow: '04 / PROJETO PESSOAL — JAIME // ASSISTENTE LOCAL DE IA',
   title: 'Jaime',
   intro:
-    'Assistente local de IA em Node.js e TypeScript, integrado ao Ollama. Meu laboratório prático para estudar IA Aplicada, privacidade, CLI, automações e agentes com base em código real.',
+    'O Jaime é meu projeto pessoal de IA local. Criei esse assistente em Node.js e TypeScript, integrado ao Ollama, para estudar na prática como modelos de linguagem podem apoiar programação, organização de ideias, documentação, produtividade técnica e automações controladas.',
   quote:
-    'Mais do que parecer especialista em IA, o Jaime mostra meu caminho real: aprender construindo, conectar bagagem de dev sênior a IA Aplicada e transformar estudo em ferramenta útil.',
+    'O Jaime é a forma mais honesta de mostrar minha evolução para IA aplicada: aprender fazendo, documentar o processo e transformar curiosidade em uma ferramenta real.',
   tags: ['Node.js', 'TypeScript', 'Ollama', 'LLMs locais', 'CLI', 'Markdown', 'Linux', 'Agentes', 'MCP'],
   panels: [
     {
       title: 'Estrutura',
-      eyebrow: 'roadmap do assistente',
+      eyebrow: 'arquitetura atual',
       blocks: [
         {
           label: 'Arquitetura',
           text:
-            'Motor em Node.js + TypeScript com separação de responsabilidades. Ollama gerenciando LLMs locais com streaming, memória e salvamento em Markdown.'
+            'Assistente local em Node.js e TypeScript, com integração ao Ollama, execução via CLI, streaming de respostas, gerenciamento de sessão, histórico de conversas e persistência em Markdown.'
         },
         {
-          label: 'Evolução',
-          text: 'Roadmap para agentes, MCP (Model Context Protocol) e automações CLI-first.'
+          label: 'Roadmap',
+          text: 'A evolução prevista inclui leitura de código, integração com MCPs, agentes, ferramentas controladas, automações locais, organização de conhecimento e execução segura com foco em privacidade, rastreabilidade e aprendizado progressivo.'
         }
       ]
     },
@@ -344,8 +350,8 @@ export const projectData = {
       eyebrow: 'direção profissional',
       blocks: [
         {
-          label: 'Resumo',
-          text: 'Crescer em IA Aplicada sem apagar a base: dev, integrações, produto, liderança técnica.'
+          label: 'Princípio',
+          text: 'Construir IA aplicada com responsabilidade: primeiro entender o problema, depois validar arquitetura, limites, segurança e valor prático antes de escalar qualquer solução.'
         }
       ]
     }
@@ -422,7 +428,7 @@ export const stackGroups: StackGroup[] = [
 export const footerCopy = {
   title: 'FIM\nDO ARQUIVO.',
   description:
-    'Suporte, front-end, e-commerce, integrações, liderança técnica e a fase atual de aprofundamento em IA Aplicada. O Jaime entra como prova prática dessa transição.'
+    'Do suporte ao desenvolvimento, do front-end às integrações, da entrega individual à liderança técnica, cada fase adicionou uma camada importante. Agora, com o Jaime, transformo essa bagagem em um laboratório prático para estudar, testar e construir soluções mais inteligentes.'
 };
 
 export const footerContacts: ContactItem[] = [

@@ -18,13 +18,13 @@ const RadarItem = styled.div.withConfig({ componentId: 'metric' })`
     top: 0;
     bottom: 0;
     width: 0;
-    background: ${tokens.cyan};
+    background: ${tokens.yellow};
     transition: width 0.25s ease;
   }
 
   &:hover {
     background: rgba(255, 255, 255, 0.1);
-    border-color: ${tokens.cyan};
+    border-color: ${tokens.yellow};
     transform: translateX(4px);
   }
 
@@ -35,7 +35,7 @@ const RadarLabel = styled.div.withConfig({ componentId: 'metric__label' })`
   font-size: 14px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: ${tokens.cyan};
+  color: ${tokens.yellow};
   margin-bottom: 4px;
 `;
 
