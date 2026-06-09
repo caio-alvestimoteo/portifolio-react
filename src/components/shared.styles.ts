@@ -12,7 +12,7 @@ export const sectionBase = css`
 
 export const h2Base = css`
   font-family: ${tokens.fontDisplay};
-  font-size: clamp(81px, 9vw, 184px);
+  font-size: clamp(49px, 5.4vw, 110px);
   line-height: 0.85;
   margin: 0 0 24px;
   color: inherit;
@@ -28,7 +28,7 @@ export const h2Base = css`
   }
 
   @media (max-width: 650px) {
-    font-size: clamp(40px, 4.5vw, 92px);
+    font-size: clamp(24px, 2.7vw, 55px);
   }
 `;
 

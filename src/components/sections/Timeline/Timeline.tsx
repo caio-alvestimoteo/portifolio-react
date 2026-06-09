@@ -13,16 +13,39 @@ import {
   SubEntryYear, SubEntryCompany, SubEntryBadge, SubEntryDescription,
   FilmReelWrapper, FilmLabel, FilmControls, FilmArrow,
   FilmPeekOuter, FilmScrollArea, FilmStrip, FilmFrame, FilmDot,
-  FilmFrameYear, FilmCard, FilmImageBox, FilmImagePlaceholder,
+  FilmFrameYear, FilmCard, FilmImageBox, FilmWatermark, FilmWatermarkMark, FilmWatermarkYear,
   FilmFrameContent, FilmFrameTitle, FilmFrameDesc,
 } from './Timeline.styles';
 
 const FilmReel: FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
   const areaRef = useRef<HTMLDivElement>(null);
   const frameRefs = useRef<(HTMLDivElement | null)[]>([]);
   const hoverTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const dragRef = useRef({ active: false, startX: 0, scrollLeft: 0, pointerId: -1 });
   const total = preCareerData.length;
+
+  const syncActiveIndexFromScroll = useCallback(() => {
+    const area = areaRef.current;
+    if (!area) return;
+
+    const center = area.scrollLeft + area.clientWidth / 2;
+    let closest = 0;
+    let minDistance = Infinity;
+
+    frameRefs.current.forEach((frame, index) => {
+      if (!frame) return;
+      const frameCenter = frame.offsetLeft + frame.offsetWidth / 2;
+      const distance = Math.abs(center - frameCenter);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closest = index;
+      }
+    });
+
+    setActiveIndex(closest);
+  }, []);
 
   const scrollToIndex = useCallback((index: number) => {
     const frame = frameRefs.current[index];
@@ -33,8 +56,80 @@ const FilmReel: FC = () => {
     setActiveIndex(index);
   }, []);
 
+  useEffect(() => {
+    const area = areaRef.current;
+    if (!area) return;
+
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+    const onScroll = () => {
+      if (dragRef.current.active) return;
+      if (timeout) clearTimeout(timeout);
+      timeout = setTimeout(syncActiveIndexFromScroll, 80);
+    };
+
+    area.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      area.removeEventListener('scroll', onScroll);
+      if (timeout) clearTimeout(timeout);
+    };
+  }, [syncActiveIndexFromScroll]);
+
   const scrollByStep = (dir: 1 | -1) => {
     scrollToIndex(Math.max(0, Math.min(total - 1, activeIndex + dir)));
+  };
+
+  const stopHoverScroll = () => {
+    if (hoverTimerRef.current !== null) {
+      clearTimeout(hoverTimerRef.current);
+      hoverTimerRef.current = null;
+    }
+  };
+
+  const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+    const area = areaRef.current;
+    if (!area || event.button !== 0) return;
+
+    stopHoverScroll();
+    dragRef.current = {
+      active: true,
+      startX: event.clientX,
+      scrollLeft: area.scrollLeft,
+      pointerId: event.pointerId,
+    };
+    setIsDragging(true);
+    area.setPointerCapture(event.pointerId);
+  };
+
+  const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
+    const area = areaRef.current;
+    const drag = dragRef.current;
+    if (!area || !drag.active || event.pointerId !== drag.pointerId) return;
+
+    area.scrollLeft = drag.scrollLeft - (event.clientX - drag.startX);
+  };
+
+  const endDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+    const area = areaRef.current;
+    const drag = dragRef.current;
+    if (!area || !drag.active || event.pointerId !== drag.pointerId) return;
+
+    dragRef.current.active = false;
+    setIsDragging(false);
+    area.releasePointerCapture(event.pointerId);
+    syncActiveIndexFromScroll();
+  };
+
+  const filmArrows = (
+    <>
+      <FilmArrow onClick={() => scrollByStep(-1)} disabled={activeIndex === 0} aria-label="anterior">←</FilmArrow>
+      <FilmArrow onClick={() => scrollByStep(1)} disabled={activeIndex === total - 1} aria-label="próximo">→</FilmArrow>
+    </>
+  );
+
+  const handleFrameHover = (index: number) => {
+    if (dragRef.current.active) return;
+    stopHoverScroll();
+    if (index !== activeIndex) scrollToIndex(index);
   };
 
   const startHoverScroll = () => {
@@ -49,35 +144,39 @@ const FilmReel: FC = () => {
     hoverTimerRef.current = setTimeout(step, 1800);
   };
 
-  const stopHoverScroll = () => {
-    if (hoverTimerRef.current !== null) {
-      clearTimeout(hoverTimerRef.current);
-      hoverTimerRef.current = null;
-    }
-  };
-
   return (
     <FilmReelWrapper>
-      <FilmLabel>// Raízes — antes de 2010</FilmLabel>
+      <FilmLabel>
+        <span>// Raízes — antes de 2010</span>
+        <FilmControls>{filmArrows}</FilmControls>
+      </FilmLabel>
       <FilmPeekOuter
         onMouseEnter={startHoverScroll}
         onMouseLeave={stopHoverScroll}
       >
-        <FilmScrollArea ref={areaRef}>
+        <FilmScrollArea
+          ref={areaRef}
+          $dragging={isDragging}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={endDrag}
+          onPointerCancel={endDrag}
+        >
           <FilmStrip>
             {preCareerData.map((entry, i) => (
               <FilmFrame
                 key={entry.year}
                 ref={(el: HTMLDivElement | null) => { frameRefs.current[i] = el; }}
+                onMouseEnter={() => handleFrameHover(i)}
               >
                 <FilmDot $active={i === activeIndex} />
                 <FilmFrameYear $active={i === activeIndex}>{entry.year}</FilmFrameYear>
                 <FilmCard $active={i === activeIndex}>
                   <FilmImageBox>
-                    {entry.image
-                      ? <img src={entry.image} alt={entry.title} draggable={false} />
-                      : <FilmImagePlaceholder>{entry.year}</FilmImagePlaceholder>
-                    }
+                    <FilmWatermark aria-hidden="true">
+                      <FilmWatermarkMark>{entry.watermark}</FilmWatermarkMark>
+                      <FilmWatermarkYear>{entry.year}</FilmWatermarkYear>
+                    </FilmWatermark>
                   </FilmImageBox>
                   <FilmFrameContent>
                     <FilmFrameTitle>{entry.title}</FilmFrameTitle>
@@ -89,10 +188,7 @@ const FilmReel: FC = () => {
           </FilmStrip>
         </FilmScrollArea>
       </FilmPeekOuter>
-      <FilmControls>
-        <FilmArrow onClick={() => scrollByStep(-1)} disabled={activeIndex === 0} aria-label="anterior">←</FilmArrow>
-        <FilmArrow onClick={() => scrollByStep(1)} disabled={activeIndex === total - 1} aria-label="próximo">→</FilmArrow>
-      </FilmControls>
+      <FilmControls $placement="footer">{filmArrows}</FilmControls>
     </FilmReelWrapper>
   );
 };

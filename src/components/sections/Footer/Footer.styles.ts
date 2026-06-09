@@ -11,7 +11,7 @@ export const FooterSection = styled.section.withConfig({ componentId: 'footer-se
 
 export const FooterTitle = styled.div.withConfig({ componentId: 'footer__title' })`
   font-family: ${tokens.fontDisplay};
-  font-size: clamp(83px, 9vw, 166px);
+  font-size: clamp(50px, 5.4vw, 100px);
   line-height: 0.88;
   text-transform: uppercase;
   letter-spacing: -0.02em;

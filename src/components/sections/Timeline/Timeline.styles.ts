@@ -8,6 +8,10 @@ export const FilmReelWrapper = styled.div.withConfig({ componentId: 'timeline__f
 `;
 
 export const FilmLabel = styled.div.withConfig({ componentId: 'timeline__film-label' })`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   font-size: 11px;
   letter-spacing: 0.22em;
   color: ${tokens.muted};
@@ -15,19 +19,23 @@ export const FilmLabel = styled.div.withConfig({ componentId: 'timeline__film-la
   margin-bottom: 16px;
 `;
 
-export const FilmControls = styled.div.withConfig({ componentId: 'timeline__film-controls' })`
+export const FilmControls = styled.div.withConfig({ componentId: 'timeline__film-controls' })<{ $placement?: 'inline' | 'footer' }>`
   display: flex;
-  gap: 8px;
-  justify-content: flex-end;
-  margin-top: 12px;
+  gap: 6px;
+  align-items: center;
+
+  ${({ $placement }) => $placement === 'footer' && `
+    justify-content: flex-end;
+    margin-top: 12px;
+  `}
 `;
 
 export const FilmArrow = styled.button.withConfig({ componentId: 'timeline__film-arrow' })`
-  width: 32px;
-  height: 32px;
-  border: 1px solid ${tokens.line};
+  width: 28px;
+  height: 28px;
+  border: 1px solid ${tokens.red};
   background: none;
-  color: ${tokens.ink};
+  color: ${tokens.red};
   font-size: 14px;
   cursor: pointer;
   display: flex;
@@ -65,12 +73,14 @@ export const FilmPeekOuter = styled.div.withConfig({ componentId: 'timeline__fil
 `;
 
 /* peek = (1060px wrapper - 507px frame) / 2 - 20px gap ≈ 253px → ~metade do frame */
-export const FilmScrollArea = styled.div.withConfig({ componentId: 'timeline__film-scroll' })`
+export const FilmScrollArea = styled.div.withConfig({ componentId: 'timeline__film-scroll' })<{ $dragging?: boolean }>`
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: ${({ $dragging }) => ($dragging ? 'none' : 'x mandatory')};
   padding-left: calc(50% - 253px);
   padding-right: calc(50% - 253px);
   user-select: none;
+  cursor: ${({ $dragging }) => ($dragging ? 'grabbing' : 'grab')};
+  touch-action: pan-y;
 
   &::-webkit-scrollbar { display: none; }
   scrollbar-width: none;
@@ -92,7 +102,7 @@ export const FilmFrame = styled.div.withConfig({ componentId: 'timeline__film-fr
   position: relative;
   z-index: 1;
   scroll-snap-align: center;
-  cursor: default;
+  cursor: pointer;
 `;
 
 export const FilmDot = styled.div.withConfig({ componentId: 'timeline__film-dot' })<{ $active: boolean }>`
@@ -105,6 +115,11 @@ export const FilmDot = styled.div.withConfig({ componentId: 'timeline__film-dot'
   flex-shrink: 0;
   transform: ${({ $active }) => $active ? 'scale(1.25)' : 'scale(1)'};
   transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+
+  ${FilmFrame}:hover & {
+    background: ${tokens.red};
+    transform: scale(1.15);
+  }
 `;
 
 export const FilmFrameYear = styled.div.withConfig({ componentId: 'timeline__film-frame-year' })<{ $active: boolean }>`
@@ -114,6 +129,10 @@ export const FilmFrameYear = styled.div.withConfig({ componentId: 'timeline__fil
   line-height: 1;
   letter-spacing: -0.01em;
   transition: color 0.3s;
+
+  ${FilmFrame}:hover & {
+    color: ${tokens.red};
+  }
 `;
 
 export const FilmCard = styled.div.withConfig({ componentId: 'timeline__film-card' })<{ $active: boolean }>`
@@ -121,7 +140,13 @@ export const FilmCard = styled.div.withConfig({ componentId: 'timeline__film-car
   border: 1px solid ${({ $active }) => $active ? tokens.red : tokens.line};
   background: ${tokens.bg2};
   box-shadow: ${({ $active }) => $active ? `3px 3px 0 ${tokens.red}` : 'none'};
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+
+  ${FilmFrame}:hover & {
+    border-color: ${tokens.red};
+    box-shadow: 3px 3px 0 ${tokens.red};
+    transform: translate(-2px, -2px);
+  }
 `;
 
 export const FilmImageBox = styled.div.withConfig({ componentId: 'timeline__film-imgbox' })`
@@ -129,26 +154,52 @@ export const FilmImageBox = styled.div.withConfig({ componentId: 'timeline__film
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: rgba(10, 8, 8, 0.06);
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(1) contrast(1.1);
-    display: block;
-  }
 `;
 
-export const FilmImagePlaceholder = styled.div.withConfig({ componentId: 'timeline__film-placeholder' })`
+export const FilmWatermark = styled.div.withConfig({ componentId: 'timeline__film-watermark' })`
   width: 100%;
   height: 100%;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(45deg, transparent 0 14px, rgba(215, 38, 56, 0.035) 14px 16px),
+    linear-gradient(135deg, rgba(10, 8, 8, 0.04) 0%, rgba(215, 38, 56, 0.05) 100%);
+
+  ${FilmFrame}:hover & {
+    background:
+      repeating-linear-gradient(45deg, transparent 0 14px, rgba(215, 38, 56, 0.06) 14px 16px),
+      linear-gradient(135deg, rgba(10, 8, 8, 0.05) 0%, rgba(215, 38, 56, 0.08) 100%);
+  }
+`;
+
+export const FilmWatermarkMark = styled.div.withConfig({ componentId: 'timeline__film-watermark-mark' })`
   font-family: ${tokens.fontDisplay};
-  font-size: 52px;
-  color: rgba(10, 8, 8, 0.06);
-  letter-spacing: -0.02em;
+  font-size: clamp(56px, 10vw, 96px);
+  line-height: 0.9;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(215, 38, 56, 0.14);
+  user-select: none;
+  transition: color 0.3s, transform 0.3s;
+
+  ${FilmFrame}:hover & {
+    color: rgba(215, 38, 56, 0.22);
+    transform: scale(1.03);
+  }
+`;
+
+export const FilmWatermarkYear = styled.div.withConfig({ componentId: 'timeline__film-watermark-year' })`
+  position: absolute;
+  right: 14px;
+  bottom: 10px;
+  font-family: ${tokens.fontMono};
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(10, 8, 8, 0.18);
   user-select: none;
 `;
 

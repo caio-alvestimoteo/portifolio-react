@@ -18,7 +18,7 @@ export const ProjectSection = styled.section.withConfig({ componentId: 'project-
 
   h2 {
     font-family: ${tokens.fontDisplay};
-    font-size: clamp(71px, 7.92vw, 162px);
+    font-size: clamp(43px, 4.75vw, 97px);
     line-height: 0.85;
     margin: 0 0 24px;
     color: inherit;

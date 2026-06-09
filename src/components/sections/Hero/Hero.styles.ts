@@ -33,18 +33,22 @@ export const Topline = styled.div.withConfig({ componentId: 'hero__topline' })`
 
 export const Layout = styled.div.withConfig({ componentId: 'hero__layout' })`
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 1.2fr);
   gap: 48px;
-  align-items: end;
+  align-items: start;
 
-  @media (max-width: 1100px) {
+  > div:first-child {
+    min-width: 0;
+  }
+
+  @media (max-width: 992px) {
     grid-template-columns: 1fr;
   }
 `;
 
 export const Title = styled.h1.withConfig({ componentId: 'hero__title' })`
   font-family: ${tokens.fontDisplay};
-  font-size: clamp(110px, 13vw, 253px);
+  font-size: clamp(66px, 7.8vw, 152px);
   line-height: 0.84;
   margin: 0;
   letter-spacing: -0.04em;
@@ -55,8 +59,8 @@ export const Title = styled.h1.withConfig({ componentId: 'hero__title' })`
   &:hover { transform: translateX(-4px); }
   &:hover span { color: ${tokens.ink}; }
 
-  @media (max-width: 1750px) { font-size: clamp(99px, 11.7vw, 228px); }
-  @media (max-width: 650px) { font-size: clamp(67px, 11.7vw, 228px); }
+  @media (max-width: 1750px) { font-size: clamp(60px, 7vw, 137px); }
+  @media (max-width: 650px) { font-size: clamp(41px, 7vw, 137px); }
 `;
 
 export const TitleAccent = styled.span.withConfig({ componentId: 'hero__title-accent' })`
@@ -69,7 +73,7 @@ export const Role = styled.div.withConfig({ componentId: 'hero__role' })`
   font-size: 14px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin: 18px 0 24px;
+  margin: 10px 0 15px;
   color: ${tokens.muted};
 
   strong { color: ${tokens.ink}; }
@@ -77,9 +81,9 @@ export const Role = styled.div.withConfig({ componentId: 'hero__role' })`
 
 export const Lead = styled.p.withConfig({ componentId: 'hero__lead' })`
   font-size: 18px;
-  line-height: 1.7;
-  max-width: 560px;
-  margin: 0 0 24px;
+  line-height: 1.55;
+  max-width: 938px;
+  margin: 0 0 18px;
   color: rgba(10, 8, 8, 0.78);
 
   strong { color: ${tokens.red}; }
@@ -92,10 +96,12 @@ export const Chips = styled.div.withConfig({ componentId: 'hero__chips' })`
 `;
 
 export const Card = styled.div.withConfig({ componentId: 'hero__card' })`
+  min-width: 0;
   border: 2px solid ${tokens.ink};
   background: ${tokens.bg2};
-  padding: 20px;
+  padding: 24px;
   position: relative;
+  align-self: end;
   transition: transform 0.35s cubic-bezier(.2, .7, .2, 1), box-shadow 0.35s cubic-bezier(.2, .7, .2, 1);
 
   &:hover {
@@ -132,7 +138,7 @@ export const CardJpPair = styled.div.withConfig({ componentId: 'hero__card-jp-pa
 
 export const CardJpKanji = styled.div.withConfig({ componentId: 'hero__card-jp-kanji' })`
   font-family: ${tokens.fontJp};
-  font-size: clamp(55px, 6vw, 92px);
+  font-size: clamp(34px, 3.6vw, 55px);
   font-weight: 900;
   color: ${tokens.red};
   line-height: 0.9;
@@ -149,20 +155,23 @@ export const CardJpGloss = styled.div.withConfig({ componentId: 'hero__card-jp-g
 `;
 
 export const CardJpSub = styled.div.withConfig({ componentId: 'hero__card-jp-sub' })`
-  font-size: 14px;
+  font-size: 13px;
   color: ${tokens.muted};
-  letter-spacing: 0.2em;
+  letter-spacing: 0.14em;
   text-align: right;
   text-transform: uppercase;
+  line-height: 1.45;
+  overflow-wrap: break-word;
+  word-break: break-word;
 `;
 
 export const CardStats = styled.div.withConfig({ componentId: 'hero__card-stats' })`
-  margin-top: 28px;
+  margin-top: 24px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
   border-top: 2px solid ${tokens.ink};
-  padding-top: 14px;
+  padding-top: 16px;
 `;
 
 export const ScrollHint = styled.div.withConfig({ componentId: 'hero__scroll-hint' })`

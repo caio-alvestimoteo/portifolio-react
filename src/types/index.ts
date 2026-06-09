@@ -2,6 +2,7 @@ export interface PreCareerEntry {
   year: number;
   title: string;
   description: string;
+  watermark: string;
   image?: string;
 }
 

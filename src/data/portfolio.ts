@@ -67,26 +67,31 @@ export const preCareerData: PreCareerEntry[] = [
     year: 2005,
     title: 'Curso de Hardware',
     description: 'Primeiro contato técnico: trocava peças, formatava máquinas para amigos e família. A curiosidade virou estudo.',
+    watermark: 'CPU',
   },
   {
     year: 2006,
     title: 'Linux & Kernel',
     description: 'Trabalhava com o professor do curso. Recompilava kernel do Linux — descobrindo que software tem camadas mais profundas que a interface.',
+    watermark: 'KERNEL',
   },
   {
     year: 2007,
     title: 'Servidores & Cabeamento',
     description: 'Primeiro contato com ambientes corporativos: servidores Windows e cabeamento estruturado. Suporte informal com responsabilidade real.',
+    watermark: 'SERVER',
   },
   {
     year: 2008,
     title: 'Manutenção Plena',
     description: 'Hardware e software em profundidade. Diagnóstico, reparo e suporte a clientes — aprendendo a resolver problemas sob pressão.',
+    watermark: 'REPAIR',
   },
   {
     year: 2009,
     title: 'Primeira Assistência Técnica',
     description: 'Minha primeira empresa. Primeiro negócio próprio — e a primeira lição real sobre autonomia, cliente e entrega.',
+    watermark: 'SHOP',
   },
 ];
 
@@ -479,7 +484,7 @@ export const parallaxLayers: ParallaxLayer[] = [
     top: '8vh',
     side: 'left',
     offset: '-5vw',
-    fontSize: 'clamp(180px, 28vw, 480px)',
+    fontSize: 'clamp(108px, 16.8vw, 288px)',
     color: 'rgba(215, 38, 56, 0.06)',
     px: -0.05,
     py: 0.15
@@ -489,7 +494,7 @@ export const parallaxLayers: ParallaxLayer[] = [
     top: '32vh',
     side: 'right',
     offset: '-10vw',
-    fontSize: 'clamp(220px, 32vw, 560px)',
+    fontSize: 'clamp(132px, 19.2vw, 336px)',
     color: 'rgba(10, 8, 8, 0.05)',
     px: 0.04,
     py: 0.35
@@ -499,7 +504,7 @@ export const parallaxLayers: ParallaxLayer[] = [
     top: '60vh',
     side: 'left',
     offset: '-2vw',
-    fontSize: 'clamp(140px, 22vw, 380px)',
+    fontSize: 'clamp(84px, 13.2vw, 228px)',
     color: 'rgba(10, 8, 8, 0.07)',
     px: -0.03,
     py: 0.5,
@@ -510,7 +515,7 @@ export const parallaxLayers: ParallaxLayer[] = [
     top: '90vh',
     side: 'right',
     offset: '-6vw',
-    fontSize: 'clamp(160px, 24vw, 420px)',
+    fontSize: 'clamp(96px, 14.4vw, 252px)',
     color: 'rgba(215, 38, 56, 0.05)',
     px: 0.06,
     py: 0.7
@@ -520,7 +525,7 @@ export const parallaxLayers: ParallaxLayer[] = [
     top: '130vh',
     side: 'left',
     offset: '-8vw',
-    fontSize: 'clamp(180px, 26vw, 460px)',
+    fontSize: 'clamp(108px, 15.6vw, 276px)',
     color: 'rgba(10, 8, 8, 0.05)',
     px: -0.04,
     py: 0.25
@@ -530,7 +535,7 @@ export const parallaxLayers: ParallaxLayer[] = [
     top: '170vh',
     side: 'right',
     offset: '-2vw',
-    fontSize: 'clamp(140px, 22vw, 380px)',
+    fontSize: 'clamp(84px, 13.2vw, 228px)',
     color: 'rgba(215, 38, 56, 0.06)',
     px: 0.04,
     py: 0.55,
@@ -541,7 +546,7 @@ export const parallaxLayers: ParallaxLayer[] = [
     top: '220vh',
     side: 'left',
     offset: '-10vw',
-    fontSize: 'clamp(180px, 28vw, 480px)',
+    fontSize: 'clamp(108px, 16.8vw, 288px)',
     color: 'rgba(10, 8, 8, 0.06)',
     px: -0.03,
     py: 0.4
@@ -551,7 +556,7 @@ export const parallaxLayers: ParallaxLayer[] = [
     top: '270vh',
     side: 'right',
     offset: '-4vw',
-    fontSize: 'clamp(140px, 22vw, 380px)',
+    fontSize: 'clamp(84px, 13.2vw, 228px)',
     color: 'rgba(10, 8, 8, 0.06)',
     px: 0.05,
     py: 0.6,
@@ -562,7 +567,7 @@ export const parallaxLayers: ParallaxLayer[] = [
     top: '320vh',
     side: 'left',
     offset: '-6vw',
-    fontSize: 'clamp(160px, 24vw, 420px)',
+    fontSize: 'clamp(96px, 14.4vw, 252px)',
     color: 'rgba(215, 38, 56, 0.06)',
     px: -0.04,
     py: 0.3
